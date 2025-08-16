@@ -1,0 +1,3 @@
+- Install Apache, PHP, MariaDB 
+- (Optional) Build with docker 
+- Install and setup vibe coding tools (VS Code, Cursor)
