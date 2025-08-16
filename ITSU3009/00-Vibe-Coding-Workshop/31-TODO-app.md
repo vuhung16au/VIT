@@ -13,11 +13,19 @@ As a user, I want to add a new task so that I can quickly capture an item I need
 # The prompt
 
 ```
+I want to create a simple TODO application using PHP and MariaDB. The first user story I want to implement is:
+
 As a user, I want to add a new task so that I can quickly capture an item I need to remember.
 
 Additional requirements: 
 - Use PHP
 - Use Maria DB connection and database as created 
+- Make the code as simple as possible 
+- Don't implement any other functionality unless I tell you to do that
+- Don't implement any test 
+
+More information: 
+
 ```
 
 #ref. [User Stories](User-Stories.md)
