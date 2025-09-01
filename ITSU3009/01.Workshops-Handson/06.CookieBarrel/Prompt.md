@@ -1,3 +1,88 @@
+# Security (NFR)
+
+TODO: Write your prompt here.
+
+Notes:
+- This is an independent feature.
+- Should implement as soon as possible.
+- Can be integrated with github actions
+
+# Logging (NFR)
+
+TODO: Write your prompt here.
+
+Notes:
+- This is an independent feature.
+- Should implement as soon as possible.
+- Start with a clear strategy for logging, and the tools to be used.
+
+# Migrate from local docker MongoDB to MongoDB Atlas
+
+TODO: Write your prompt here.
+
+# Week 10
+
+# Week 09
+
+# Week 08
+
+# Week 07
+
+# Week 06
+
+# Week 05
+
+# Week 04
+
+# Week 03
+
+# Week 02
+
+# Week 01 
+
+# Suggest me a plan for the project
+
+The objective is to implement all the features in the "# List of Features " section.
+
+What I want to know:
+- The 10-weekly plan of the project.
+
+The funtional requirements should be implemented in sequence, one by one.
+
+Criteria:
+- The schedule schould be incremental, starting from the earliest feature.
+- The order of the features to be implemented should be based on the complexity of the feature, from easiest to hardest.
+
+Save your plan to a local file: `docs/10-weekly-plan.md`
+The structure of the plan should be:
+```
+- Week 1: 
+- Week 2
+- Week 3
+- Week 4
+- Week 5
+- Week 6
+- Week 7
+- Week 8
+- Week 9
+- Week 10
+```
+
+For each week, 
+-  List the features to be implemented, and the estimated time to implement each feature, and a description of the feature.
+- List the dependencies between the features, and the order of the features to be implemented.
+- List the estimated time to implement each feature.
+- List the deliverables 
+
+# Populate the database with some data
+
+- Create a script to populate the database with some data.
+- Save the script to a local file: `database/populate-database.js`
+
+# Load database schema into MongoDB
+
+- Load (migrate) the database schema from `database/cookie-barrel-schema.json` into docker's MongoDB.
+
 # Create `.gitignore` file 
 
 - For this project (next.js and express.js)
