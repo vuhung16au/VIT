@@ -1,0 +1,471 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "options": {},
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["email", "passwordHash", "roles", "status", "createdAt"],
+          "properties": {
+            "email": { "bsonType": "string", "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$" },
+            "phone": { "bsonType": ["string", "null"] },
+            "passwordHash": { "bsonType": "string", "minLength": 20 },
+            "roles": { "bsonType": "array", "items": { "enum": ["customer", "admin"] } },
+            "status": { "enum": ["active", "blocked"] },
+            "profile": {
+              "bsonType": "object",
+              "properties": {
+                "name": { "bsonType": ["string", "null"] },
+                "avatarUrl": { "bsonType": ["string", "null"] }
+              }
+            },
+            "addresses": { "bsonType": "array" },
+            "preferences": { "bsonType": "object" },
+            "mfa": {
+              "bsonType": "object",
+              "properties": {
+                "enabled": { "bsonType": ["bool", "null"] },
+                "secret": { "bsonType": ["string", "null"] }
+              }
+            },
+            "lastLoginAt": { "bsonType": ["date", "null"] },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "email": 1 }, "name": "uniq_email", "unique": true },
+        { "key": { "phone": 1 }, "name": "uniq_phone", "unique": true, "sparse": true },
+        { "key": { "status": 1 }, "name": "by_status" },
+        { "key": { "createdAt": -1 }, "name": "by_createdAt_desc" }
+      ]
+    },
+    {
+      "name": "authTokens",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["userId", "tokenHash", "expiresAt", "createdAt"],
+          "properties": {
+            "userId": { "bsonType": "objectId" },
+            "tokenHash": { "bsonType": "string", "minLength": 32 },
+            "device": { "bsonType": ["object", "null"] },
+            "ip": { "bsonType": ["string", "null"] },
+            "userAgent": { "bsonType": ["string", "null"] },
+            "expiresAt": { "bsonType": "date" },
+            "revokedAt": { "bsonType": ["date", "null"] },
+            "createdAt": { "bsonType": "date" }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "userId": 1 }, "name": "by_userId" },
+        { "key": { "expiresAt": 1 }, "name": "ttl_expiresAt", "expireAfterSeconds": 0 },
+        { "key": { "tokenHash": 1 }, "name": "uniq_tokenHash", "unique": true }
+      ]
+    },
+    {
+      "name": "categories",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["name", "slug", "isActive", "createdAt"],
+          "properties": {
+            "name": { "bsonType": "string" },
+            "slug": { "bsonType": "string" },
+            "description": { "bsonType": ["string", "null"] },
+            "position": { "bsonType": ["int", "double", "long", "null"] },
+            "isActive": { "bsonType": "bool" },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "slug": 1 }, "name": "uniq_slug", "unique": true },
+        { "key": { "isActive": 1 }, "name": "by_isActive" },
+        { "key": { "position": 1 }, "name": "by_position" }
+      ]
+    },
+    {
+      "name": "menuItems",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["name", "slug", "price", "isAvailable", "createdAt"],
+          "properties": {
+            "categoryIds": { "bsonType": "array", "items": { "bsonType": "objectId" } },
+            "name": { "bsonType": "string", "minLength": 1 },
+            "slug": { "bsonType": "string", "minLength": 1 },
+            "description": { "bsonType": ["string", "null"] },
+            "price": {
+              "bsonType": "object",
+              "required": ["amount", "currency"],
+              "properties": {
+                "amount": { "bsonType": ["double", "decimal", "int", "long"] },
+                "currency": { "bsonType": "string", "minLength": 3, "maxLength": 3 }
+              }
+            },
+            "options": { "bsonType": "array" },
+            "tags": { "bsonType": "array", "items": { "bsonType": "string" } },
+            "images": { "bsonType": "array", "items": { "bsonType": "string" } },
+            "isAvailable": { "bsonType": "bool" },
+            "inventory": {
+              "bsonType": "object",
+              "properties": {
+                "track": { "bsonType": ["bool", "null"] },
+                "qty": { "bsonType": ["int", "long", "null"] }
+              }
+            },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "slug": 1 }, "name": "uniq_slug", "unique": true },
+        { "key": { "isAvailable": 1 }, "name": "by_isAvailable" },
+        { "key": { "categoryIds": 1 }, "name": "by_categoryIds" },
+        { "key": { "name": "text", "description": "text", "tags": "text" }, "name": "text_search", "weights": { "name": 10, "tags": 5, "description": 2 } }
+      ]
+    },
+    {
+      "name": "carts",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["status", "items", "totals", "createdAt"],
+          "properties": {
+            "userId": { "bsonType": ["objectId", "null"] },
+            "sessionId": { "bsonType": ["string", "null"] },
+            "status": { "enum": ["active", "abandoned", "converted"] },
+            "items": {
+              "bsonType": "array",
+              "items": {
+                "bsonType": "object",
+                "required": ["menuItemId", "nameSnapshot", "unitPriceSnapshot", "quantity", "lineTotal"],
+                "properties": {
+                  "menuItemId": { "bsonType": "objectId" },
+                  "nameSnapshot": { "bsonType": "string" },
+                  "selectedOptions": { "bsonType": ["array", "object", "null"] },
+                  "unitPriceSnapshot": { "bsonType": ["double", "decimal", "int", "long"] },
+                  "quantity": { "bsonType": ["int", "long"], "minimum": 1 },
+                  "lineTotal": { "bsonType": ["double", "decimal", "int", "long"] }
+                }
+              }
+            },
+            "totals": {
+              "bsonType": "object",
+              "required": ["subTotal", "grandTotal", "currency"],
+              "properties": {
+                "subTotal": { "bsonType": ["double", "decimal", "int", "long"] },
+                "tax": { "bsonType": ["double", "decimal", "int", "long", "null"] },
+                "discount": { "bsonType": ["double", "decimal", "int", "long", "null"] },
+                "deliveryFee": { "bsonType": ["double", "decimal", "int", "long", "null"] },
+                "grandTotal": { "bsonType": ["double", "decimal", "int", "long"] },
+                "currency": { "bsonType": "string" }
+              }
+            },
+            "couponCode": { "bsonType": ["string", "null"] },
+            "expiresAt": { "bsonType": ["date", "null"] },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "userId": 1 }, "name": "by_userId" },
+        { "key": { "sessionId": 1 }, "name": "by_sessionId" },
+        { "key": { "status": 1 }, "name": "by_status" },
+        { "key": { "expiresAt": 1 }, "name": "ttl_expiresAt", "expireAfterSeconds": 0 },
+        { "key": { "updatedAt": -1 }, "name": "by_updatedAt_desc" }
+      ]
+    },
+    {
+      "name": "orders",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["orderNo", "userId", "items", "totals", "orderStatus", "paymentStatus", "createdAt"],
+          "properties": {
+            "orderNo": { "bsonType": "string" },
+            "userId": { "bsonType": "objectId" },
+            "cartId": { "bsonType": ["objectId", "null"] },
+            "items": {
+              "bsonType": "array",
+              "minItems": 1,
+              "items": {
+                "bsonType": "object",
+                "required": ["menuItemId", "nameSnapshot", "unitPriceSnapshot", "quantity", "lineTotal"],
+                "properties": {
+                  "menuItemId": { "bsonType": "objectId" },
+                  "nameSnapshot": { "bsonType": "string" },
+                  "unitPriceSnapshot": { "bsonType": ["double", "decimal", "int", "long"] },
+                  "quantity": { "bsonType": ["int", "long"], "minimum": 1 },
+                  "lineTotal": { "bsonType": ["double", "decimal", "int", "long"] }
+                }
+              }
+            },
+            "totals": {
+              "bsonType": "object",
+              "required": ["subTotal", "grandTotal", "currency"],
+              "properties": {
+                "subTotal": { "bsonType": ["double", "decimal", "int", "long"] },
+                "tax": { "bsonType": ["double", "decimal", "int", "long", "null"] },
+                "discount": { "bsonType": ["double", "decimal", "int", "long", "null"] },
+                "deliveryFee": { "bsonType": ["double", "decimal", "int", "long", "null"] },
+                "grandTotal": { "bsonType": ["double", "decimal", "int", "long"] },
+                "currency": { "bsonType": "string" }
+              }
+            },
+            "paymentStatus": { "enum": ["pending", "authorized", "paid", "refunded", "failed"] },
+            "orderStatus": { "enum": ["placed", "preparing", "ready", "out_for_delivery", "delivered", "cancelled"] },
+            "statusTimeline": {
+              "bsonType": "array",
+              "items": { "bsonType": "object", "properties": { "status": { "bsonType": "string" }, "at": { "bsonType": "date" }, "note": { "bsonType": ["string", "null"] } } }
+            },
+            "delivery": {
+              "bsonType": "object",
+              "properties": {
+                "type": { "enum": ["pickup", "delivery"] },
+                "address": { "bsonType": ["object", "null"] },
+                "contact": { "bsonType": ["object", "null"] }
+              }
+            },
+            "notes": { "bsonType": ["string", "null"] },
+            "couponCode": { "bsonType": ["string", "null"] },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "orderNo": 1 }, "name": "uniq_orderNo", "unique": true },
+        { "key": { "userId": 1, "createdAt": -1 }, "name": "by_userId_createdAt_desc" },
+        { "key": { "orderStatus": 1 }, "name": "by_orderStatus" },
+        { "key": { "paymentStatus": 1 }, "name": "by_paymentStatus" },
+        { "key": { "createdAt": -1 }, "name": "by_createdAt_desc" }
+      ]
+    },
+    {
+      "name": "payments",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["orderId", "provider", "amount", "currency", "status", "createdAt"],
+          "properties": {
+            "orderId": { "bsonType": "objectId" },
+            "provider": { "bsonType": "string" },
+            "providerIntentId": { "bsonType": ["string", "null"] },
+            "amount": { "bsonType": ["double", "decimal", "int", "long"] },
+            "currency": { "bsonType": "string" },
+            "status": { "enum": ["initiated", "authorized", "succeeded", "failed", "refunded"] },
+            "method": { "bsonType": ["object", "null"] },
+            "error": { "bsonType": ["object", "null"] },
+            "idempotencyKey": { "bsonType": ["string", "null"] },
+            "receiptUrl": { "bsonType": ["string", "null"] },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "orderId": 1 }, "name": "by_orderId" },
+        { "key": { "provider": 1, "providerIntentId": 1 }, "name": "uniq_provider_intent", "unique": true, "sparse": true },
+        { "key": { "status": 1 }, "name": "by_status" },
+        { "key": { "createdAt": -1 }, "name": "by_createdAt_desc" }
+      ]
+    },
+    {
+      "name": "shipments",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["orderId", "status", "createdAt"],
+          "properties": {
+            "orderId": { "bsonType": "objectId" },
+            "carrier": { "bsonType": ["string", "null"] },
+            "trackingNumber": { "bsonType": ["string", "null"] },
+            "status": { "bsonType": "string" },
+            "checkpoints": { "bsonType": "array" },
+            "estimatedDeliveryAt": { "bsonType": ["date", "null"] },
+            "deliveredAt": { "bsonType": ["date", "null"] },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "orderId": 1 }, "name": "by_orderId" },
+        { "key": { "trackingNumber": 1 }, "name": "uniq_trackingNumber", "unique": true, "sparse": true },
+        { "key": { "status": 1 }, "name": "by_status" }
+      ]
+    },
+    {
+      "name": "notifications",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["channel", "templateKey", "status", "createdAt"],
+          "properties": {
+            "userId": { "bsonType": ["objectId", "null"] },
+            "orderId": { "bsonType": ["objectId", "null"] },
+            "channel": { "enum": ["email", "sms", "push"] },
+            "templateKey": { "bsonType": "string" },
+            "payload": { "bsonType": ["object", "null"] },
+            "status": { "enum": ["queued", "sent", "failed"] },
+            "providerMessageId": { "bsonType": ["string", "null"] },
+            "error": { "bsonType": ["object", "null"] },
+            "scheduledAt": { "bsonType": ["date", "null"] },
+            "sentAt": { "bsonType": ["date", "null"] },
+            "retries": { "bsonType": ["int", "long", "null"] },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "userId": 1 }, "name": "by_userId" },
+        { "key": { "orderId": 1 }, "name": "by_orderId" },
+        { "key": { "status": 1 }, "name": "by_status" },
+        { "key": { "scheduledAt": 1 }, "name": "by_scheduledAt" },
+        { "key": { "createdAt": -1 }, "name": "by_createdAt_desc" }
+      ]
+    },
+    {
+      "name": "auditLogs",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["action", "createdAt"],
+          "properties": {
+            "actor": {
+              "bsonType": "object",
+              "required": ["type"],
+              "properties": {
+                "type": { "enum": ["user", "admin", "system"] },
+                "id": { "bsonType": ["objectId", "null"] }
+              }
+            },
+            "action": { "bsonType": "string" },
+            "target": {
+              "bsonType": "object",
+              "properties": {
+                "type": { "bsonType": "string" },
+                "id": { "bsonType": ["objectId", "null"] }
+              }
+            },
+            "metadata": { "bsonType": ["object", "null"] },
+            "ip": { "bsonType": ["string", "null"] },
+            "userAgent": { "bsonType": ["string", "null"] },
+            "createdAt": { "bsonType": "date" }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "actor.id": 1 }, "name": "by_actor_id" },
+        { "key": { "target.id": 1 }, "name": "by_target_id" },
+        { "key": { "action": 1 }, "name": "by_action" },
+        { "key": { "createdAt": -1 }, "name": "by_createdAt_desc" }
+      ]
+    },
+    {
+      "name": "adminSettings",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["key", "value", "updatedAt"],
+          "properties": {
+            "key": { "bsonType": "string" },
+            "value": { "bsonType": "object" },
+            "updatedBy": { "bsonType": ["objectId", "null"] },
+            "updatedAt": { "bsonType": "date" }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "key": 1 }, "name": "uniq_key", "unique": true }
+      ]
+    },
+    {
+      "name": "coupons",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["code", "discount", "isActive", "createdAt"],
+          "properties": {
+            "code": { "bsonType": "string" },
+            "discount": {
+              "bsonType": "object",
+              "required": ["type", "value"],
+              "properties": {
+                "type": { "enum": ["percent", "amount"] },
+                "value": { "bsonType": ["double", "decimal", "int", "long"] }
+              }
+            },
+            "conditions": { "bsonType": ["object", "null"] },
+            "validFrom": { "bsonType": ["date", "null"] },
+            "validTo": { "bsonType": ["date", "null"] },
+            "maxRedemptions": { "bsonType": ["int", "long", "null"] },
+            "perUserLimit": { "bsonType": ["int", "long", "null"] },
+            "isActive": { "bsonType": "bool" },
+            "createdAt": { "bsonType": "date" },
+            "updatedAt": { "bsonType": ["date", "null"] }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "code": 1 }, "name": "uniq_code", "unique": true },
+        { "key": { "isActive": 1 }, "name": "by_isActive" },
+        { "key": { "validTo": 1 }, "name": "by_validTo" },
+        { "key": { "createdAt": -1 }, "name": "by_createdAt_desc" }
+      ]
+    },
+    {
+      "name": "webhookEvents",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["provider", "eventId", "type", "createdAt"],
+          "properties": {
+            "provider": { "bsonType": "string" },
+            "eventId": { "bsonType": "string" },
+            "type": { "bsonType": "string" },
+            "payload": { "bsonType": ["object", "null"] },
+            "processedAt": { "bsonType": ["date", "null"] },
+            "error": { "bsonType": ["object", "null"] },
+            "createdAt": { "bsonType": "date" }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "provider": 1, "eventId": 1 }, "name": "uniq_provider_eventId", "unique": true },
+        { "key": { "type": 1 }, "name": "by_type" },
+        { "key": { "processedAt": 1 }, "name": "by_processedAt" }
+      ]
+    },
+    {
+      "name": "rateLimits",
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["key", "windowStart", "count", "expiresAt"],
+          "properties": {
+            "key": { "bsonType": "string" },
+            "windowStart": { "bsonType": "date" },
+            "count": { "bsonType": ["int", "long"] },
+            "expiresAt": { "bsonType": "date" }
+          }
+        }
+      },
+      "indexes": [
+        { "key": { "key": 1, "windowStart": 1 }, "name": "uniq_key_window", "unique": true },
+        { "key": { "expiresAt": 1 }, "name": "ttl_expiresAt", "expireAfterSeconds": 0 }
+      ]
+    }
+  ]
+}
+
+
