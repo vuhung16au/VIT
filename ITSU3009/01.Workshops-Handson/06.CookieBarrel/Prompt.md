@@ -53,10 +53,10 @@ Criteria:
 - The schedule schould be incremental, starting from the earliest feature.
 - The order of the features to be implemented should be based on the complexity of the feature, from easiest to hardest.
 
-Save your plan to a local file: `docs/10-weekly-plan.md`
+Save your plan to a local file: `docs/10-week-plan.md`
 The structure of the plan should be:
 ```
-- Week 1: 
+- Week 1
 - Week 2
 - Week 3
 - Week 4
