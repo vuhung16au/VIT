@@ -28,8 +28,11 @@ services:
 
   mongo:
     image: mongo:8.0
+    environment:
+      - MONGO_INITDB_DATABASE=app
     volumes:
       - mongo-data:/data/db
+      - ./database:/docker-entrypoint-initdb.d:ro
 
   mongo-express:
     image: mongo-express:latest
