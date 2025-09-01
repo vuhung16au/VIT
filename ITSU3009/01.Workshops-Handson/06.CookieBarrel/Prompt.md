@@ -88,6 +88,14 @@ For each week,
 - For this project (next.js and express.js)
 <!-- - Add `Promt.md` to the `.gitignore` file. -->
 
+# Update `README.md` and write how to run the project
+
+- how to start next.js app
+- how to start express.js app
+- how to populate the database with some data
+- how to load the database schema into MongoDB
+
+
 # Implement a "hello world" app for Next.js 
 
 - Deploy it to the docker container.
