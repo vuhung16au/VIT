@@ -1,0 +1,203 @@
+services:
+  # Frontend Service - React.js application with Nginx
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: ecommerce-frontend:latest
+    container_name: ecommerce-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    environment:
+      - REACT_APP_API_URL=http://localhost:5001
+      - REACT_APP_ENV=development
+      - REACT_APP_GITLAB_CI=true
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Backend Service - Node.js API with Express
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: ecommerce-backend:latest
+    container_name: ecommerce-backend
+    ports:
+      - "5001:5000"
+    environment:
+      - NODE_ENV=development
+      - MONGODB_HOST=db
+      - MONGODB_PORT=27017
+      - MONGODB_USER=root
+      - MONGODB_PASSWORD=secret
+      - MONGODB_DATABASE=ecommerce
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_USER=admin
+      - RABBITMQ_PASSWORD=secret
+      - JWT_SECRET=your-jwt-secret-key
+      - PORT=5000
+      - GITLAB_CI=true
+      - OFFLINE_MODE=true
+    depends_on:
+      - db
+      - redis
+      - rabbitmq
+    networks:
+      - app-network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Database Service - MongoDB (Local/Offline)
+  db:
+    image: mongo:4.4
+    container_name: ecommerce-db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+      - MONGO_INITDB_DATABASE=ecommerce
+      - MONGO_INITDB_REPLICA_SET_MODE=offline
+    volumes:
+      - db_data:/data/db
+      - ./database/init:/docker-entrypoint-initdb.d
+      - ./database/mongod.conf:/etc/mongod.conf
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Cache Service - Redis (Local/Offline)
+  redis:
+    image: redis:6.2-alpine
+    container_name: ecommerce-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass secret --save 900 1 --save 300 10 --save 60 10000
+    volumes:
+      - redis_data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Message Queue Service - RabbitMQ (Local/Offline)
+  rabbitmq:
+    image: rabbitmq:3.9-management-alpine
+    container_name: ecommerce-rabbitmq
+    ports:
+      - "5672:5672"   # AMQP port
+      - "15672:15672" # Management UI port
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=secret
+      - RABBITMQ_DEFAULT_VHOST=/
+      - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit log_levels [{connection,error},{default,error}]
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Monitoring Service - Prometheus (Local/Offline)
+  monitoring:
+    image: prom/prometheus:latest
+    container_name: ecommerce-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/rules:/etc/prometheus/rules
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+      - '--web.external-url=http://localhost:9090'
+    networks:
+      - app-network
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+  # Load Balancer - Nginx (Local/Offline scaling)
+  nginx:
+    image: nginx:alpine
+    container_name: ecommerce-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+    profiles:
+      - scaling
+    environment:
+      - NGINX_ENVSUBST_TEMPLATE_DIR=/etc/nginx/templates
+      - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx/conf.d
+
+# Networks (Local/Offline)
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
+
+# Volumes (Local Storage)
+volumes:
+  db_data:
+    driver: local
+  redis_data:
+    driver: local
+  rabbitmq_data:
+    driver: local
+  prometheus_data:
+    driver: local
