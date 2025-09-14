@@ -15,6 +15,13 @@ The e-commerce platform consists of six core services:
 - **Message Queue**: RabbitMQ for background task processing
 - **Monitoring**: Prometheus for system monitoring and observability
 
+Note: Ask the AI about the techstack above if you are not sure. 
+
+Sample prompt:
+```
+Explain what is React.js and why it is used in the frontend in our project. 
+```
+
 ## 🎓 Learning Objectives
 
 By completing this capstone project, students will demonstrate proficiency in:
@@ -52,7 +59,7 @@ By completing this capstone project, students will demonstrate proficiency in:
 ## 🚀 How to Work (Vibe Coding)
 
 ### Getting Started
-1. **Read the Project Overview**: Start with `00.The-Project.md` to understand the complete scope
+1. **Read the Project Overview**: Start with `Phase-0-0-Understand-the-Project.md` to understand the complete scope
 2. **Choose Your Phase**: Begin with Phase 0 to understand the project, then proceed sequentially
 3. **Use AI Assistance**: Each phase includes detailed prompts for AI assistants to guide your work
 4. **Iterate and Improve**: Use the iterative development approach to refine your implementation
@@ -65,16 +72,15 @@ By completing this capstone project, students will demonstrate proficiency in:
 
 ### Recommended Tools
 - **Docker Desktop**: For local container management
-- **VS Code**: With Docker and YAML extensions
-- **Git**: For version control and collaboration
+- **VS Code**: With Docker and YAML extensions. Cursor is also recommended. 
+- **GitHub**: For version control and collaboration. Commit your work to GitHub so you can go back to a previous version if you need to. 
 - **GitLab**: For CI/CD pipeline management
-- **Postman**: For API testing
-- **Terminal/Command Line**: For Docker Compose operations
+- **Postman**: For API testing. Curl is also recommended. 
 
 ## 🤖 How to Use the Prompts
 
 ### AI Assistant Integration
-Each phase includes a comprehensive prompt designed to work with AI assistants (ChatGPT, Claude, etc.) to provide personalized guidance.
+Each phase includes a comprehensive prompt designed to work with AI assistants (Copilot, Cursor, Claude, Rovos, etc.) to provide personalized guidance.
 
 ### Using the Prompts
 1. **Copy the Prompt**: Start each phase by copying the provided prompt
@@ -101,6 +107,20 @@ Each prompt includes:
 - Technology stack justification
 - Development approach planning
 
+### Phase 0-1: Docker Refresher
+**File**: `Phase-0-1-Docker-Refresher.md`
+- Simple Dockerfile creation and image building
+- Basic docker-compose.yml configuration
+- MongoDB setup with web interface
+- Hands-on Docker practice exercises
+
+### Phase 0-2: Build EverShop
+**File**: `Phase-0-2-Build-EverShop.md`
+- Install EverShop e-commerce platform using Docker Compose
+- Explore real-world e-commerce application features
+- Understand service architecture and communication
+- Gain practical experience with production-like setup
+
 ### Phase 1: System Architecture Design
 **File**: `Phase-1-0-System-Architecture-Design.md`
 - Service identification and responsibilities
@@ -115,6 +135,8 @@ Each prompt includes:
 - API design document
 - Database schema
 - Technology stack justification
+
+Note: Populate the database with some data would be a good idea. 
 
 ### Phase 2: Docker Compose Implementation
 **File**: `Phase-2-0-Docker-Compose-Implementation.md`
@@ -176,17 +198,25 @@ Each prompt includes:
 - Security and compliance documentation
 - Deployment runbooks
 
+### Phase 6: Implement E-Commerce Platform
+**File**: `Phase-6-0-Implement-E-Commerce-Platform.md`
+- Project summary and feature analysis
+- Feature enhancement planning and implementation
+- Advanced platform enhancements
+- Portfolio documentation and presentation
+- Future development roadmap
+
 ## 🛠️ Quick Start Guide
 
 ### Prerequisites
 - Docker Desktop installed and running
 - Basic understanding of Docker and Docker Compose
 - Familiarity with web development concepts
-- Access to an AI assistant (ChatGPT, Claude, etc.)
+- Access to an AI assistant (Copilot, Cursor, Claude, Rovos, etc.)
 
 ### Getting Started
 1. **Clone or Download** this project repository
-2. **Read** `00.The-Project.md` for complete project overview
+2. **Read** `Phase-0-0-Understand-the-Project.md` for complete project overview
 3. **Start with Phase 0** using the provided prompt
 4. **Follow the phase sequence** for systematic development
 5. **Document your progress** throughout the project
@@ -212,14 +242,6 @@ Each prompt includes:
 # Use Phase-5-0-Multi-Environment-Deployment-Strategy.md prompt
 ```
 
-## 📖 Additional Resources
-
-### Documentation
-- [Docker Compose Documentation](https://docs.docker.com/compose/)
-- [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)
-- [GitLab CI/CD Documentation](https://docs.gitlab.com/ee/ci/)
-- [Microservices Architecture Patterns](https://microservices.io/)
-
 ### Tools and Extensions
 - Docker Desktop
 - VS Code with Docker extension
@@ -234,6 +256,7 @@ Each prompt includes:
 - Refer to the comprehensive documentation in each phase
 - Follow the step-by-step implementation guides
 - Test and validate each component as you build
+- Ask the AI for help if you are stuck. 
 
 ### Best Practices
 - **Start Simple**: Begin with basic configurations and add complexity gradually
