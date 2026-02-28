@@ -382,3 +382,9 @@ Temporary Items
 
 # Project specific
 # Add any project-specific files or directories here
+
+
+#Ignore vscode AI rules
+.github/instructions/codacy.instructions.md
+
+.codacy
