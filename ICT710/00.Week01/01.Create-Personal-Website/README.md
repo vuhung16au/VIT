@@ -6,6 +6,8 @@ A modern, responsive personal portfolio website built with React and Tailwind CS
 
 ![localhost](images/localhost5173.png) ![VScode](images/VSCode.png)
 
+Live [demo](https://personal-website-navy-chi.vercel.app/): https://personal-website-navy-chi.vercel.app/
+
 ## ✨ Features
 
 - **🎨 Modern Design**: Clean, professional design with gradient accents
