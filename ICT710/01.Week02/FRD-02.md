@@ -1,6 +1,6 @@
 # Implement the doctor booking website
 
-Base on `01.Booking-App-Design.md`, implement the design of the doctor booking application.
+Base on `01.Week02/01.Booking-App-Design/*.md`, implement the design of the doctor booking application.
 
 Use the following technologies:
 - Frontend: Next.js with Tailwind CSS for building the user interface and handling client-side interactions.
@@ -9,7 +9,7 @@ Use the following technologies:
 
 ## Outputs
 
-Save your work under folder `02.Booking-App/` with the following structure:
+Save your work under folder `01.Week02/02.Booking-App/` with the following structure:
 ```
 02.Booking-App/
 ├── src/

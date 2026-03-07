@@ -4,7 +4,9 @@ Based on the the documentation and the code, create a set of instructions for an
 
 ## Outputs
 
-Save your work as `<root>/AGENTS.md`
+Save your work as `<root-folder>/AGENTS.md`
+
+where `root-folder` is the folder of the project, e.g. `01.Week02/02.Booking-App/`.
 
 `<root>/AGENTS.md` include/refers to specific policies and procedures under folder `<root>/docs/agents/*.md`
 
