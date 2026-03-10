@@ -1,3 +1,4 @@
+
 # Using a domain 
 
 - Use a domain name for the website.
@@ -25,6 +26,17 @@
 - Instagram icon
 - X/Twitter icon
 
+
+
+# Change the UI
+
+e.g 
+
+- Apply a new color scheme 
+- Change a theme 
+- Add dark/light mode 
+- Change the way users interact with the services in the Contact form 
+- More Call-to-Actions? How?
 
 # Cross-platform testing
 
