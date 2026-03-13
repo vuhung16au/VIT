@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-fraunces);
+
+  --color-calm-50: #eef8ff;
+  --color-calm-100: #d9efff;
+  --color-calm-400: #4aa7cf;
+  --color-calm-600: #157198;
+  --color-calm-900: #0f3144;
+
+  --color-mint-100: #d8f7f1;
+  --color-mint-400: #4dc4a6;
+  --color-mint-700: #0f7d65;
+
+  --color-coral-100: #ffe8de;
+  --color-coral-500: #f78653;
+
+  --animate-fade-slide: fade-slide 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
+}
+
+@keyframes fade-slide {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+body {
+  min-height: 100vh;
+  color: #123043;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(77, 196, 166, 0.18), transparent 44%),
+    radial-gradient(circle at 90% 0%, rgba(74, 167, 207, 0.22), transparent 40%),
+    linear-gradient(180deg, #f7fcff 0%, #eef8ff 100%);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), serif;
+}
+
+.scene-shell {
+  @apply mx-auto w-full max-w-6xl px-4 py-8 md:px-8 md:py-10;
+}
+
+.scene-card {
+  @apply animate-fade-slide rounded-3xl border border-white/70 bg-white/80 p-6 shadow-[0_12px_40px_rgba(26,84,112,0.14)] backdrop-blur-sm md:p-8;
+}
