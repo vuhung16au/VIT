@@ -4,6 +4,12 @@ A frontend-only Next.js + Tailwind CSS demo that visualizes the holistic healthc
 
 This project follows the FRD in `02.Week03/FRD-Patient-Journey.md` and demonstrates key IxD/UX principles in 4 scenes.
 
+
+# Screenshots / Demo 
+
+![The Patient Journey Demo](images/patient-journey.gif)
+
+
 ## What This Demo Shows
 
 1. Holistic UX framing with a Journey Map dashboard.
