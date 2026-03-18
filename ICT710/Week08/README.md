@@ -23,3 +23,7 @@ A structured way to move from user insight to documented design and development 
 ## Looking Ahead To Next Week
 
 Next week focuses on prototyping from low fidelity to high fidelity.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

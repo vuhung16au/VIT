@@ -40,3 +40,12 @@ Start at `Week00` and move forward in order. In each week:
 ## Tools And Setup
 
 Students should begin with `Week00/Tools.md`, `Week00/Environment-Setup.md`, and `Week00/Troubleshooting.md`. Use `make help`, `make build`, `make clean`, and `make size` at the root or week level to work with the projects.
+
+## Licenses
+
+This repo uses a split licensing approach:
+
+- all documentation files, including `.md` files, are licensed under `CC BY-SA 4.0`
+- all code files are licensed under `MIT`
+
+See [LICENSES.md](LICENSES.md) for the repo notice.

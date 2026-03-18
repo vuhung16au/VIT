@@ -23,3 +23,7 @@ A stronger understanding that designing for specific users is more useful than d
 ## Looking Ahead To Next Week
 
 Next week turns persona insights into structured requirements and user stories.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

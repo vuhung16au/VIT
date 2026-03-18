@@ -23,3 +23,7 @@ A practical framework for reviewing interfaces systematically before running for
 ## Looking Ahead To Next Week
 
 Next week moves into moderated usability testing with real users.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

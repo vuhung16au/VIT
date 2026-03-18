@@ -23,3 +23,7 @@ A practical understanding of how UX goes beyond layout and includes thinking, fe
 ## Looking Ahead To Next Week
 
 Next week applies design process thinking through the Double Diamond framework.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

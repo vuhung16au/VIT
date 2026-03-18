@@ -23,3 +23,7 @@ An understanding that good interfaces emerge through iteration, not a single dra
 ## Looking Ahead To Next Week
 
 Next week focuses on data gathering techniques for design improvement.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

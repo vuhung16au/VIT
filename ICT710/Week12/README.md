@@ -23,3 +23,7 @@ A full view of how usability testing turns observations into concrete design imp
 ## Looking Ahead To Next Week
 
 This is the final week of the current sequence and brings together the full IxD workflow from setup to evaluation.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

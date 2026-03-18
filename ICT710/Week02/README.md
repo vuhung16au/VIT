@@ -23,3 +23,7 @@ A clearer understanding of how the same task can be designed in very different w
 ## Looking Ahead To Next Week
 
 Next week moves into cognitive, social, and emotional UX foundations.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

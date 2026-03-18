@@ -23,3 +23,7 @@ A clearer sense that interface choice depends on user context, task, and constra
 ## Looking Ahead To Next Week
 
 Next week shifts to user-centered design, personas, and journey mapping.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

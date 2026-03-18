@@ -23,3 +23,7 @@ A practical understanding that prototypes answer different questions at differen
 ## Looking Ahead To Next Week
 
 Next week shifts from individual screens to full design systems and design languages.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

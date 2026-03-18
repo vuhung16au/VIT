@@ -23,3 +23,7 @@ A clear understanding that systems scale design more effectively than isolated o
 ## Looking Ahead To Next Week
 
 Next week focuses on design evaluation through inspection, analytics, and structured review.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

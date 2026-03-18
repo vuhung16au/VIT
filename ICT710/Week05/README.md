@@ -23,3 +23,7 @@ A practical understanding of how design decisions should be informed by evidence
 ## Looking Ahead To Next Week
 
 Next week explores multiple interface types for the same task.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

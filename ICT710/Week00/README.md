@@ -23,3 +23,7 @@ A working local development environment and one very small interactive app that 
 ## Looking Ahead To Next Week
 
 Next week moves into the foundations of Interaction Design and the differences between UI, UX, and IxD.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).

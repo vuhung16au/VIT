@@ -23,3 +23,7 @@ A first interactive healthcare-style interface that demonstrates navigation, hie
 ## Looking Ahead To Next Week
 
 Next week focuses on problem space, interaction types, and conceptual thinking before coding.
+
+## License Note
+
+See [LICENSES.md](../LICENSES.md).
