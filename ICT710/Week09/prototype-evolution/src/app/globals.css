@@ -1,0 +1,54 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(220, 53, 69, 0.12), transparent 35%),
+    linear-gradient(180deg, #fff8f9 0%, #f7f5ff 100%);
+}
+
+.prototype-hero {
+  background:
+    linear-gradient(140deg, rgba(220, 53, 69, 0.95), rgba(111, 66, 193, 0.92)),
+    linear-gradient(180deg, #dc3545, #6f42c1);
+  color: white;
+}
+
+.stage-chip {
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.paper-canvas {
+  background:
+    linear-gradient(#f7f2e7 1px, transparent 1px),
+    linear-gradient(90deg, #f7f2e7 1px, transparent 1px);
+  background-size: 18px 18px;
+  background-color: #fffdf7;
+}
+
+.paper-thumb {
+  height: 110px;
+  border: 2px dashed #6c757d;
+  background: linear-gradient(135deg, #ffffff, #f2eee3);
+}
+
+.high-fi-panel {
+  background: linear-gradient(180deg, #ffffff, #f8f9ff);
+  border: 1px solid rgba(13, 110, 253, 0.12);
+  box-shadow: 0 1rem 3rem rgba(15, 23, 42, 0.1);
+}
+
+.doctor-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffe0e6, #dbe4ff);
+}

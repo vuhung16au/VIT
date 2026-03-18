@@ -1,0 +1,36 @@
+.wireframe-layout {
+  background: #efefef;
+  border: 2px solid #c6c6c6;
+}
+
+.wireframe-header,
+.wireframe-panel {
+  background: #f8f8f8;
+  border: 1px solid #b9b9b9;
+}
+
+.wireframe-bar,
+.wireframe-box,
+.wireframe-card,
+.wireframe-field,
+.wireframe-button {
+  background: #cfcfcf;
+  border-radius: 0.4rem;
+}
+
+.wireframe-box {
+  height: 68px;
+}
+
+.wireframe-card {
+  height: 84px;
+}
+
+.wireframe-field {
+  height: 44px;
+}
+
+.wireframe-button {
+  height: 50px;
+  width: 60%;
+}
