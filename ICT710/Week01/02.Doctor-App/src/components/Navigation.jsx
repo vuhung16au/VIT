@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FiMenu, FiX, FiCalendar, FiUsers, FiFileText, FiVideo } from 'react-icons/fi'
+import { FiCalendar, FiFileText, FiMenu, FiUsers, FiX } from 'react-icons/fi'
 import { FaStethoscope } from 'react-icons/fa'
 
 const Navigation = () => {
@@ -10,6 +10,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: <FaStethoscope /> },
     { name: 'Find Doctors', path: '/doctors', icon: <FiUsers /> },
+    { name: 'My Bookings', path: '/booking/1', icon: <FiCalendar /> },
     { name: 'My Records', path: '/records', icon: <FiFileText /> },
   ]
 
