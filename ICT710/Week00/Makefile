@@ -12,9 +12,20 @@ PACKAGE_JSONS := $(shell find . \
 	-name package.json -print | sort)
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 
-.PHONY: all build clean list size
+.PHONY: all build clean help list size
 
 all: build
+
+help:
+	@echo "Week Makefile ($(notdir $(CURDIR)))"
+	@echo ""
+	@echo "Targets:"
+	@echo "  make help   Print this help message"
+	@echo "  make        Build all npm projects in this week"
+	@echo "  make build  Install missing dependencies and run build scripts"
+	@echo "  make clean  Remove node_modules and build output to save space"
+	@echo "  make size   Show size summary for npm projects in this week"
+	@echo "  make list   List detected npm project folders"
 
 list:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
