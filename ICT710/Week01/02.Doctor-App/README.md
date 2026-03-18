@@ -1,10 +1,10 @@
 # Doctor Booking & Video Consultation Platform
 
-A modern healthcare application that enables patients to search for doctors, book appointments, and access video consultations. Built with React and designed following Material Design and Apple HIG principles for an intuitive, accessible user experience.
+A modern healthcare application that enables patients to search for doctors, book appointments, and access video consultations. The current Week 01 implementation also serves as an Interaction Design (IxD) demo, highlighting motion, visual feedback, spacing, and live input response on the homepage.
 
 ## Overview
 
-This platform provides a comprehensive solution for patients to manage their healthcare needs online. Users can discover qualified healthcare professionals across various specialties, schedule appointments (both in-person and virtual), and maintain their medical records in one convenient location.
+This platform provides a comprehensive solution for patients to manage their healthcare needs online. Users can discover qualified healthcare professionals across various specialties, schedule appointments (both in-person and virtual), and maintain their medical records in one convenient location, while the homepage demonstrates beginner-friendly IxD principles through an interactive booking and search experience.
 
 ## Screenshots
 
@@ -13,6 +13,12 @@ This platform provides a comprehensive solution for patients to manage their hea
 Live [demo](https://doctor-app-tawny.vercel.app/): https://doctor-app-tawny.vercel.app/
 
 ## Key Features
+
+### 🎓 Week 01 IxD Demo
+- Focused homepage with a strong primary booking call-to-action
+- Animated button states showing hover, press, and transition feedback
+- Three feature cards demonstrating hierarchy, spacing, and depth
+- Interactive `DoctorSearch` component with live preview text
 
 ### 🔍 Doctor Discovery
 - Search doctors by name or specialty
@@ -44,6 +50,12 @@ Live [demo](https://doctor-app-tawny.vercel.app/): https://doctor-app-tawny.verc
 - Screen reader compatible
 - Focus-visible states for all interactive elements
 - High contrast design for readability
+
+### ✨ Interaction Design Principles
+- **Motion**: Hover scale and press feedback on key buttons
+- **Space**: Clear content grouping, card layouts, and whitespace hierarchy
+- **Time**: Instant UI updates while typing in the homepage search component
+- **Visual Feedback**: Focus states, live preview panel, and clear CTA styling
 
 ## Technology Stack
 
@@ -83,10 +95,11 @@ The application combines the best of both design systems:
 02.Doctor-App/
 ├── src/
 │   ├── components/
-│   │   ├── Navigation.jsx    # Header navigation with mobile menu
-│   │   └── Footer.jsx         # Site-wide footer with links
+│   │   ├── Navigation.jsx     # Header navigation with mobile menu
+│   │   ├── Footer.jsx         # Site-wide footer with links
+│   │   └── DoctorSearch.jsx   # Interactive homepage search demo
 │   ├── pages/
-│   │   ├── Home.jsx           # Landing page with hero and features
+│   │   ├── Home.jsx           # Week 01 IxD-focused landing page
 │   │   ├── Doctors.jsx        # Doctor listing with search/filter
 │   │   ├── DoctorProfile.jsx  # Detailed doctor information
 │   │   ├── Booking.jsx        # Multi-step booking process
@@ -112,7 +125,7 @@ The application combines the best of both design systems:
 
 1. Navigate to project directory:
 ```bash
-cd ICT710/00.Week01/02.Doctor-App
+cd Week01/02.Doctor-App
 ```
 
 2. Install dependencies:
@@ -139,15 +152,16 @@ npm run preview
 
 ## User Journey
 
-1. **Discovery**: Browse homepage to learn about services and specialties
-2. **Search**: Navigate to doctors page and search by name or specialty
-3. **Profile**: Click on a doctor to view detailed profile and availability
-4. **Booking**: Click "Book Appointment" and complete the 3-step process:
+1. **Discovery**: Browse the homepage to explore the IxD demo hero, CTAs, and feature cards
+2. **Search Preview**: Type a doctor name or condition and optionally choose a specialty in the homepage search card
+3. **Search**: Navigate to doctors page and search by name or specialty
+4. **Profile**: Click on a doctor to view detailed profile and availability
+5. **Booking**: Click "Book Appointment" and complete the 3-step process:
    - Step 1: Select appointment type, date, and time
    - Step 2: Describe symptoms and reason for visit
    - Step 3: Provide patient information
    - Confirmation: Review and confirm booking
-5. **Records**: Access medical records to view appointments and prescriptions
+6. **Records**: Access medical records to view appointments and prescriptions
 
 ## Design Choices
 
@@ -180,6 +194,15 @@ npm run preview
 - Screen reader announcements
 - Color contrast (WCAG AA compliant)
 - Touch targets (minimum 44x44px)
+
+## Week 01 Demo Focus
+
+This version is aligned to the Week 01 demo plan and is especially useful for teaching:
+
+- The difference between UI styling and interaction behavior
+- How motion and transition timing support user feedback
+- Why spacing and layout improve comprehension
+- How a simple live-search preview helps users feel oriented
 
 ## Future Enhancements
 
