@@ -109,6 +109,7 @@ Week09/prototype-evolution/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md                # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md
 │   ├── Prototyping-Guide.md          # When to use each fidelity
 │   └── Paper-Prototype-Template.pdf  # Printable sketching template
@@ -252,6 +253,7 @@ Week09/prototype-evolution/
 ├── README.md                              # Project overview, learning goals
 ├── QUICKSTART.md                          # Setup: install, run, deploy (<5 min)
 ├── docs/
+│   ├── Key-Takeaways.md                  # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md                  # 3-5 key learnings
 │   ├── Prototyping-Guide.md              # Fidelity decision framework
 │   ├── Paper-Prototype-Kit.pdf           # Templates and tips

@@ -225,6 +225,7 @@ Week11/evaluation-toolkit/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md          # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md
 │   ├── Nielsens-Heuristics.md      # Full heuristics reference
 │   └── Report-Template.md          # Evaluation report template
@@ -394,6 +395,7 @@ Week11/evaluation-toolkit/
 ├── README.md                              # Project overview
 ├── QUICKSTART.md                          # Setup in <5 mins
 ├── docs/
+│   ├── Key-Takeaways.md                  # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md                  # Evaluation lessons
 │   ├── Nielsens-Heuristics.md            # Full heuristics guide
 │   ├── Report-Template.md                # Professional report format

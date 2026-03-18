@@ -990,6 +990,7 @@ Week04/doctor-booking-v1/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md          # Brief IxD, UI, UX lessons from the project
 │   ├── DISCOVER-FINDINGS.md       # Problems with bad version
 │   ├── DEFINE-PROBLEM.md          # Problem statement & requirements
 │   └── DELIVER-DECISIONS.md       # Design comparison & rationale

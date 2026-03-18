@@ -77,6 +77,7 @@ Week05/feedback-forge/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md          # Brief IxD, UI, UX lessons from the project
 │   └── Key-Takeaways.md
 ├── src/
 │   ├── app/
@@ -190,6 +191,7 @@ Week05/feedback-forge/
 ├── README.md                           # Project overview, learning goals
 ├── QUICKSTART.md                       # Setup: install, run, deploy (<5 min)
 ├── docs/
+│   ├── Key-Takeaways.md               # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md               # 3-5 key learnings for students
 │   ├── Data-Gathering-Guide.md        # Best practices reference
 │   └── Question-Bank.md               # Sample questions for interviews/surveys

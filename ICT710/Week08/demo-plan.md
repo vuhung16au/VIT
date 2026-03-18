@@ -135,6 +135,7 @@ Week08/requirements-hub/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md               # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md
 │   ├── Requirements-Specification.md   # Full spec document
 │   └── Traceability-Matrix.md          # Persona → Story → Feature
@@ -268,6 +269,7 @@ Week08/requirements-hub/
 ├── README.md                              # Project overview, learning goals
 ├── QUICKSTART.md                          # Setup: install, run, deploy (<5 min)
 ├── docs/
+│   ├── Key-Takeaways.md                  # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md                  # 3-5 key learnings
 │   ├── Requirements-Specification.md      # Complete requirements doc
 │   ├── User-Story-Template.md            # Story writing guide

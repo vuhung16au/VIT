@@ -132,6 +132,7 @@ Week10/design-system-studio/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md          # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md
 │   └── Design-Principles.md         # Core design philosophy
 ├── src/
@@ -276,6 +277,7 @@ Week10/design-system-studio/
 ├── README.md                              # Project overview, learning goals
 ├── QUICKSTART.md                          # Setup: install, run, deploy (<5 min)
 ├── docs/
+│   ├── Key-Takeaways.md                  # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md                  # 3-5 key learnings
 │   ├── Design-Principles.md              # Design philosophy
 │   └── Component-Specs.md                # Component documentation

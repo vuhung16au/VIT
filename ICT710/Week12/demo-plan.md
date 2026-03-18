@@ -321,6 +321,7 @@ Week12/usability-lab-simulator/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md          # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md
 │   ├── Think-Aloud-Guide.md         # How to conduct think-aloud
 │   ├── Moderator-Script.md          # Template script
@@ -503,6 +504,7 @@ Week12/usability-lab-simulator/
 ├── README.md                              # Project overview
 ├── QUICKSTART.md                          # Setup in <5 mins
 ├── docs/
+│   ├── Key-Takeaways.md                  # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md                  # Usability testing lessons
 │   ├── Think-Aloud-Guide.md              # How to conduct
 │   ├── Moderator-Script.md               # Template script

@@ -233,6 +233,8 @@ Create a simple doctor booking homepage that demonstrates basic IxD principles: 
 
 ```
 Week01/doctor-booking/
+├── docs/
+│   └── Key-Takeaways.md         # Brief IxD, UI, UX lessons from the project
 ├── app/
 │   ├── page.tsx                 # Homepage with hero section
 │   ├── components/
@@ -468,6 +470,7 @@ Week01/doctor-booking/
 ├── README.md                       # Project overview
 ├── QUICKSTART.md                   # <5 min setup
 ├── docs/
+│   ├── Key-Takeaways.md           # Brief IxD, UI, UX lessons from the project
 │   └── Key-Takeaways.md           # IxD principles learned
 ├── app/
 │   ├── page.tsx                   # Good homepage

@@ -826,6 +826,8 @@ Create two button variants and demonstrate how A/B testing would measure which p
 ```
 Week03/cognitive-social-ux/
 ├── README.md
+├── docs/
+│   └── Key-Takeaways.md         # Brief IxD, UI, UX lessons from the project
 ├── app/
 │   ├── cognitive-ux/
 │   │   ├── page.tsx              # Overview hub

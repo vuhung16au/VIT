@@ -93,6 +93,7 @@ Week07/persona-first/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md          # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md
 │   └── Persona-Research.md          # How personas were created
 ├── src/
@@ -239,6 +240,7 @@ Week07/persona-first/
 ├── README.md                          # Project overview, learning goals
 ├── QUICKSTART.md                      # Setup: install, run, deploy (<5 min)
 ├── docs/
+│   ├── Key-Takeaways.md              # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md              # 3-5 key learnings
 │   ├── Persona-Research.md           # How to create personas
 │   ├── Journey-Mapping-Guide.md      # Journey map methodology

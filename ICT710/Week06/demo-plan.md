@@ -98,6 +98,7 @@ Week06/interface-playground/
 ├── README.md
 ├── QUICKSTART.md
 ├── docs/
+│   ├── Key-Takeaways.md          # Brief IxD, UI, UX lessons from the project
 │   └── Key-Takeaways.md
 ├── src/
 │   ├── app/
@@ -235,6 +236,7 @@ Week06/interface-playground/
 ├── README.md                           # Project overview, learning goals
 ├── QUICKSTART.md                       # Setup: install, run, deploy (<5 min)
 ├── docs/
+│   ├── Key-Takeaways.md               # Brief IxD, UI, UX lessons from the project
 │   ├── Key-Takeaways.md               # 3-5 key learnings
 │   ├── Interface-Comparison.md        # Detailed comparison matrix
 │   └── Context-Analysis.md            # When to use each interface

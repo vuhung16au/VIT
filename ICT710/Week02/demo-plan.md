@@ -710,6 +710,8 @@ Week02/doctor-booking/
 ├── README.md
 ├── PROBLEM-ANALYSIS.md            # 5W findings
 ├── CONCEPTUAL-MODEL.md            # Entities & relationships
+├── docs/
+│   └── Key-Takeaways.md           # Brief IxD, UI, UX lessons from the project
 ├── app/
 │   ├── interaction-types/
 │   │   ├── page.tsx              # 4 types overview
