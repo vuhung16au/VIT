@@ -1,0 +1,26 @@
+:root {
+  --ds-font-heading: "Georgia", "Times New Roman", serif;
+  --ds-font-body: "Garamond", "Times New Roman", serif;
+  --ds-font-mono: "Courier New", monospace;
+
+  --ds-primary-500: #3b82f6;
+  --ds-primary-700: #1d4ed8;
+  --ds-success: #10b981;
+  --ds-warning: #f59e0b;
+  --ds-error: #ef4444;
+  --ds-info: #6366f1;
+
+  --ds-surface: #fffdf8;
+  --ds-panel: #ffffff;
+  --ds-border: rgba(15, 23, 42, 0.12);
+
+  --ds-space-xs: 4px;
+  --ds-space-sm: 8px;
+  --ds-space-md: 16px;
+  --ds-space-lg: 24px;
+  --ds-space-xl: 32px;
+  --ds-space-2xl: 48px;
+
+  --ds-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+  --ds-radius: 24px;
+}
