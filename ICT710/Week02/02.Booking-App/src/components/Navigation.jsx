@@ -19,6 +19,12 @@ export default function Navigation() {
         <Link to="/" className={navClass('/')}>
           Home
         </Link>
+        <Link to="/interaction-types" className={navClass('/interaction-types')}>
+          Interaction types
+        </Link>
+        <Link to="/problem-space" className={navClass('/problem-space')}>
+          Problem space
+        </Link>
         <Link to="/book" className={navClass('/book')}>
           Book appointment
         </Link>

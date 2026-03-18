@@ -6,6 +6,10 @@ body {
   @apply antialiased text-gray-900 bg-gray-50;
 }
 
+#root {
+  @apply min-h-screen;
+}
+
 /* Touch targets ≥ 44px for accessibility */
 button, a.min-h-touch {
   min-height: 44px;
