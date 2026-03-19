@@ -51,9 +51,9 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                     <div>
                         <h4 className="text-lg font-bold mb-4 text-white">Contact</h4>
                         <ul className="space-y-2 text-gray-400">
-                            <li>123 Fitness Ave, NY 10001</li>
-                            <li>info@energeticfit.com</li>
-                            <li>+1 (555) 123-4567</li>
+                            <li>123 Fitness Avenue, Sydney NSW 2000</li>
+                            <li>hello@energeticfit.com.au</li>
+                            <li>+61 2 5550 1234</li>
                         </ul>
                     </div>
                 </div>

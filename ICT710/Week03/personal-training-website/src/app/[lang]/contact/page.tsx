@@ -35,7 +35,7 @@ export default function ContactPage() {
                                     </svg>
                                     <div>
                                         <h4 className="font-bold text-lg">Our Location</h4>
-                                        <p className="text-gray-300 mt-1">123 Fitness Ave, Suite 400<br />New York, NY 10001</p>
+                                        <p className="text-gray-300 mt-1">123 Fitness Avenue, Suite 4<br />Sydney, NSW 2000</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
@@ -44,7 +44,7 @@ export default function ContactPage() {
                                     </svg>
                                     <div>
                                         <h4 className="font-bold text-lg">Email Us</h4>
-                                        <p className="text-gray-300 mt-1">info@energeticfit.com</p>
+                                        <p className="text-gray-300 mt-1">hello@energeticfit.com.au</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
@@ -53,7 +53,7 @@ export default function ContactPage() {
                                     </svg>
                                     <div>
                                         <h4 className="font-bold text-lg">Call Us</h4>
-                                        <p className="text-gray-300 mt-1">+1 (555) 123-4567</p>
+                                        <p className="text-gray-300 mt-1">+61 2 5550 1234</p>
                                     </div>
                                 </li>
                             </ul>

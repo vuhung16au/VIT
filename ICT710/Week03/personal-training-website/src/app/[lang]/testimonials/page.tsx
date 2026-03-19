@@ -11,7 +11,7 @@ export default function TestimonialsPage() {
         {
             name: "Sarah Jenkins",
             role: "Online Coaching Client",
-            content: "I've tried every fad diet and generic workout plan out there. Working with Energetic Fit was the first time I actually understood the science behind my body. I've lost 30lbs and kept it off for 2 years now.",
+            content: "I've tried every fad diet and generic workout plan out there. Working with Energetic Fit was the first time I actually understood the science behind my body. I've lost 14kg and kept it off for 2 years now.",
             rating: 5
         },
         {
@@ -41,7 +41,7 @@ export default function TestimonialsPage() {
         {
             name: "Alex Thompson",
             role: "Online Coaching Client",
-            content: "Even from 3 states away, the accountability is real! The weekly video check-ins and form reviews made me feel like my coach was right there in the gym with me.",
+            content: "Even from Sydney and beyond, the accountability is real! The weekly video check-ins and form reviews made me feel like my coach was right there in the gym with me.",
             rating: 5
         }
     ];
