@@ -41,6 +41,10 @@ Start at `Week00` and move forward in order. In each week:
 
 Students should begin with `Week00/Tools.md`, `Week00/Environment-Setup.md`, and `Week00/Troubleshooting.md`. Use `make help`, `make build`, `make clean`, and `make size` at the root or week level to work with the projects.
 
+## Demo Recording
+
+The repo also includes an automated demo-recording workflow for the key week projects in Weeks 01 to 12. See `RECORDING.md` for the shared setup, supported projects, and `make demo` / `npm run demo:record` usage.
+
 ## Licenses
 
 This repo uses a split licensing approach:

@@ -6,7 +6,10 @@
     "dev": "next dev --webpack --hostname 127.0.0.1",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "record": "node scripts/record-demo.mjs",
+    "gif": "bash scripts/convert-to-gif.sh",
+    "demo:record": "npm run record && npm run gif"
   },
   "dependencies": {
     "next": "16.1.6",

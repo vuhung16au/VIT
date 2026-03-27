@@ -26,6 +26,9 @@ help:
 	@echo "  make clean  Remove node_modules and build output to save space"
 	@echo "  make size   Show size summary for npm projects in this week"
 	@echo "  make list   List detected npm project folders"
+	@echo "  make record Record the feedback-forge demo"
+	@echo "  make gif    Convert the latest recording to GIF"
+	@echo "  make demo   Run the full feedback-forge recording workflow"
 
 list:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
@@ -88,4 +91,4 @@ gif:
 	cd feedback-forge && $(NPM) run gif
 
 demo: record gif
-	@echo "✅ Demo video created at feedback-forge/images/patient-journey.gif"
+	@echo "Demo video created at feedback-forge/images/feedback-forge.gif"

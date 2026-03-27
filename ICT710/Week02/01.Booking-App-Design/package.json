@@ -1,0 +1,11 @@
+{
+  "name": "booking-app-design",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "record": "node scripts/record-demo.mjs",
+    "gif": "bash scripts/convert-to-gif.sh",
+    "demo:record": "npm run record && npm run gif"
+  }
+}

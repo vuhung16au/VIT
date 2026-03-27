@@ -8,7 +8,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+    "record": "node scripts/record-demo.mjs",
+    "gif": "bash scripts/convert-to-gif.sh",
+    "demo:record": "npm run record && npm run gif"
   },
   "dependencies": {
     "react": "^18.2.0",

@@ -11,8 +11,9 @@ PACKAGE_JSONS := $(shell find . \
 	\( -path '*/node_modules/*' -o -path '*/.next/*' -o -path '*/dist/*' -o -path '*/coverage/*' -o -path '*/.turbo/*' -o -path '*/.vite/*' \) -prune -o \
 	-name package.json -print | sort)
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
+DEMO_DIRS := 01.Booking-App-Design 02.Booking-App
 
-.PHONY: all build clean help list size
+.PHONY: all build clean help list size record gif demo
 
 all: build
 
@@ -26,6 +27,9 @@ help:
 	@echo "  make clean  Remove node_modules and build output to save space"
 	@echo "  make size   Show size summary for npm projects in this week"
 	@echo "  make list   List detected npm project folders"
+	@echo "  make record Record demos for projects in this week"
+	@echo "  make gif    Convert latest recordings to GIFs"
+	@echo "  make demo   Run full recording workflow for projects in this week"
 
 list:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
@@ -77,4 +81,25 @@ clean:
 	for dir in $(PACKAGE_DIRS); do \
 		echo "==> cleaning $$dir"; \
 		rm -rf "$$dir/node_modules" "$$dir/.next" "$$dir/dist" "$$dir/coverage" "$$dir/.turbo" "$$dir/.vite"; \
+	done
+
+record:
+	@set -e; \
+	for dir in $(DEMO_DIRS); do \
+		echo "==> recording $$dir"; \
+		$(MAKE) -C "$$dir" record; \
+	done
+
+gif:
+	@set -e; \
+	for dir in $(DEMO_DIRS); do \
+		echo "==> gif $$dir"; \
+		$(MAKE) -C "$$dir" gif; \
+	done
+
+demo:
+	@set -e; \
+	for dir in $(DEMO_DIRS); do \
+		echo "==> demo $$dir"; \
+		$(MAKE) -C "$$dir" demo; \
 	done
