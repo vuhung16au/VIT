@@ -6,7 +6,10 @@
     "dev": "next dev --webpack --hostname 127.0.0.1",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "record": "node scripts/record-demo.mjs",
+    "gif": "bash scripts/convert-to-gif.sh",
+    "demo:record": "npm run record && npm run gif"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -14,12 +17,14 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.49.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "playwright": "^1.49.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

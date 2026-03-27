@@ -12,7 +12,7 @@ PACKAGE_JSONS := $(shell find . \
 	-name package.json -print | sort)
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 
-.PHONY: all build clean help list size
+.PHONY: all build clean help list size record gif demo
 
 all: build
 
@@ -78,3 +78,14 @@ clean:
 		echo "==> cleaning $$dir"; \
 		rm -rf "$$dir/node_modules" "$$dir/.next" "$$dir/dist" "$$dir/coverage" "$$dir/.turbo" "$$dir/.vite"; \
 	done
+
+record:
+	@echo "==> Recording demo for feedback-forge"
+	cd feedback-forge && $(NPM) run record
+
+gif:
+	@echo "==> Converting to GIF"
+	cd feedback-forge && $(NPM) run gif
+
+demo: record gif
+	@echo "✅ Demo video created at feedback-forge/images/patient-journey.gif"
