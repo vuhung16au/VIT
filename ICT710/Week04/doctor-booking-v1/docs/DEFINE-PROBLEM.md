@@ -2,8 +2,7 @@
 
 ## Core Problem
 
-Users abandon the booking process because the form is overwhelming, confusing, and lacks trust
-signals.
+Users abandon the booking process because the form is overwhelming, confusing, and lacks trust signals.
 
 ## Target Users
 
