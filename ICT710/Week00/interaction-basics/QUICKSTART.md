@@ -32,3 +32,15 @@ npm run start
 ```bash
 npm run lint
 ```
+
+## Deploy to Vercel
+
+```bash
+# First deployment
+vercel
+
+# Production deployment
+vercel --prod
+```
+
+Your app will be live at the URL provided by Vercel (e.g., `https://interaction-basics.vercel.app`).

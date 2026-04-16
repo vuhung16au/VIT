@@ -1,3 +1,10 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "regions": ["sfo1"],
+  "git": {
+    "deploymentEnabled": true
+  }
 }
