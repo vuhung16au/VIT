@@ -1,14 +1,6 @@
 import Link from "next/link";
 
-const links = [
-  { href: "/", label: "Hub" },
-  { href: "/cli", label: "CLI" },
-  { href: "/gui", label: "GUI" },
-  { href: "/touch", label: "Touch" },
-  { href: "/voice", label: "Voice" },
-  { href: "/gesture", label: "Gesture" },
-  { href: "/timeline", label: "Timeline" },
-];
+import { navLinks } from "@/data/interfaceCatalog";
 
 type PlaygroundNavProps = {
   currentPath: string;
@@ -17,8 +9,8 @@ type PlaygroundNavProps = {
 export function PlaygroundNav({ currentPath }: PlaygroundNavProps) {
   return (
     <nav className="rounded-2xl border border-slate-200/80 bg-white/85 p-4 shadow-sm backdrop-blur">
-      <ul className="grid gap-3 md:grid-cols-7">
-        {links.map((link) => (
+      <ul className="grid gap-3 md:grid-cols-4 xl:grid-cols-6">
+        {navLinks.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}

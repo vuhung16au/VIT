@@ -15,6 +15,11 @@ await runRecording({
     { path: '/touch', label: 'Touch Interface' },
     { path: '/voice', label: 'Voice Interface' },
     { path: '/gesture', label: 'Gesture Interface' },
+    { path: '/spatial', label: 'Spatial Computing' },
+    { path: '/bci', label: 'Brain-Computer Interface' },
+    { path: '/haptics', label: 'Haptic Interface' },
+    { path: '/smart', label: 'Smart Interface' },
+    { path: '/generative', label: 'Generative UI' },
     { path: '/timeline', label: 'Timeline' },
   ],
 });

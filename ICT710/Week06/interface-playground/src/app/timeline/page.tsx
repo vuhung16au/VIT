@@ -5,7 +5,9 @@ const timeline = [
   { era: "1980s", label: "WIMP / GUI", detail: "Windows, menus, and pointers improved discoverability." },
   { era: "2000s", label: "Touch", detail: "Mobile-first interaction made direct manipulation mainstream." },
   { era: "2010s", label: "Voice", detail: "Assistants enabled hands-free interaction in daily life." },
-  { era: "2020s", label: "AR / Gesture", detail: "Multi-modal systems explore more immersive and touchless input." },
+  { era: "2020s", label: "Spatial Computing", detail: "VR, AR, and mixed reality bring depth, pass-through video, and room awareness into IxD." },
+  { era: "2020s", label: "Haptics / BCI", detail: "Interfaces are becoming tactile without touch and neural without muscle movement." },
+  { era: "2020s+", label: "Smart / Generative", detail: "Context-aware and AI-generated interfaces shift from explicit input to adaptive orchestration." },
 ];
 
 const matrix = [
@@ -14,6 +16,11 @@ const matrix = [
   ["Touch", "Low", "Medium", "High", "Medium", "Mobile / casual"],
   ["Voice", "Low", "Medium", "Medium", "High", "Driving / hands-free"],
   ["Gesture", "Medium", "Low", "Low", "High", "Touchless / niche"],
+  ["Spatial", "High", "Medium", "Medium", "Medium", "Immersive / room-scale"],
+  ["BCI", "High", "Low", "Low", "Very high", "Accessibility / low-mobility"],
+  ["Haptics", "Medium", "Medium", "Medium", "High", "Touchless + feedback"],
+  ["Smart", "Low", "High", "Low", "Medium", "Context-aware automation"],
+  ["Generative", "Medium", "Medium", "Medium", "Medium", "Task-specific adaptive workflows"],
 ];
 
 export default function TimelinePage() {
@@ -24,7 +31,8 @@ export default function TimelinePage() {
         <h1 className="text-4xl text-calm-900 md:text-5xl">Interface Evolution Timeline</h1>
         <p className="max-w-3xl text-slate-700">
           Interfaces have moved from machine-centric commands toward human-centric, multi-modal
-          systems. Older forms do not disappear, they keep serving specific contexts.
+          systems. Older forms do not disappear, they keep serving specific contexts while newer
+          ones add spatial depth, sensing, prediction, and AI-generated structure.
         </p>
         <PlaygroundNav currentPath="/timeline" />
       </header>
