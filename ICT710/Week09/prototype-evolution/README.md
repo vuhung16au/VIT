@@ -51,7 +51,7 @@ vercel --prod
 
 The project includes a `vercel.json` configuration file that specifies:
 - Framework: Next.js
-- Build command: `npm run build`
-- Install command: `npm install`
+- Build command: `bun run build`
+- Install command: `bun install`
 - `docs/Testing-Script.md` - how to test prototypes with users
 - `docs/Paper-Prototype-Kit.md` - printable-template guidance and sketching tips

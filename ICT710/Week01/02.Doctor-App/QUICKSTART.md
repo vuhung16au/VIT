@@ -4,8 +4,7 @@ This app includes the Week 01 homepage demo for Interaction Design, including th
 
 ## Prerequisites
 
-- Node.js (version 16 or higher)
-- npm or yarn package manager
+- Bun (version 1.0 or higher)
 
 ## Installation
 
@@ -16,14 +15,14 @@ cd Week01/02.Doctor-App
 
 2. Install dependencies:
 ```bash
-npm install
+bun install
 ```
 
 ## Development
 
 Run the development server:
 ```bash
-npm run dev
+bun run dev
 ```
 
 The application will open at `http://localhost:5173`
@@ -32,12 +31,12 @@ The application will open at `http://localhost:5173`
 
 Create an optimized production build:
 ```bash
-npm run build
+bun run build
 ```
 
 Preview the production build locally:
 ```bash
-npm run preview
+bun run preview
 ```
 
 ## Project Structure

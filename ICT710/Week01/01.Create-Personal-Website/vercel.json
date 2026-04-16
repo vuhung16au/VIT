@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "bun run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev"
+  "installCommand": "bun install",
+  "devCommand": "bun run dev"
 }

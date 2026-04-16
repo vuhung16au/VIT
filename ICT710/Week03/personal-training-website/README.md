@@ -14,8 +14,7 @@ This is a modern, responsive website built for a personal training business. It 
 
 ## Prerequisites
 
-- Node.js (Version 18 or above recommended)
-- `npm` (Node Package Manager)
+- Bun (Version 1.0 or above recommended)
 
 ## Getting Started
 
@@ -23,11 +22,11 @@ This is a modern, responsive website built for a personal training business. It 
 2. Open a terminal and navigate to the project root directory: `cd personal-training-website`
 3. Install dependencies:
    ```bash
-   npm install
+   bun install
    ```
 4. Run the development server:
    ```bash
-   npm run dev
+   bun run dev
    ```
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

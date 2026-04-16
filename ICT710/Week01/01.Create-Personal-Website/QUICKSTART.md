@@ -8,14 +8,12 @@ This is a modern personal portfolio website built with React and Tailwind CSS. I
 
 Before you begin, ensure you have the following installed on your system:
 
-- **Node.js** (version 16 or higher)
-- **npm** (comes with Node.js) or **yarn**
+- **Bun** (version 1.0 or higher)
 
-You can check if they're installed by running:
+You can check if it's installed by running:
 
 ```bash
-node --version
-npm --version
+bun --version
 ```
 
 ## Installation
@@ -28,14 +26,8 @@ cd ICT710/00.Week01/01.Create-Personal-Website
 
 2. **Install dependencies:**
 
-Using npm:
 ```bash
-npm install
-```
-
-Or using yarn:
-```bash
-yarn install
+bun install
 ```
 
 This will install all the required packages including:
@@ -48,14 +40,8 @@ This will install all the required packages including:
 
 To start the development server and view the website locally:
 
-Using npm:
 ```bash
-npm run dev
-```
-
-Or using yarn:
-```bash
-yarn dev
+bun run dev
 ```
 
 The website will be available at `http://localhost:5173` (or another port if 5173 is in use).
@@ -68,14 +54,8 @@ The development server includes:
 
 To create an optimized production build:
 
-Using npm:
 ```bash
-npm run build
-```
-
-Or using yarn:
-```bash
-yarn build
+bun run build
 ```
 
 The built files will be in the `dist` folder, ready to deploy to any static hosting service.
@@ -84,14 +64,8 @@ The built files will be in the `dist` folder, ready to deploy to any static host
 
 To preview the production build locally:
 
-Using npm:
 ```bash
-npm run preview
-```
-
-Or using yarn:
-```bash
-yarn preview
+bun run preview
 ```
 
 ## Project Structure
@@ -175,11 +149,11 @@ If port 5173 is already in use, Vite will automatically try the next available p
 If you encounter issues with dependencies, try:
 
 ```bash
-# Delete node_modules and package-lock.json
-rm -rf node_modules package-lock.json
+# Delete node_modules and bun.lockb
+rm -rf node_modules bun.lockb
 
 # Reinstall dependencies
-npm install
+bun install
 ```
 
 ### Build Errors

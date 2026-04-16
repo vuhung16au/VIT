@@ -23,10 +23,10 @@ RECORDING_WEEK_TARGETS := \
 	week01-record week02-record week03-record week04-record week05-record week06-record week07-record week08-record week09-record week10-record week11-record week12-record \
 	week01-gif week02-gif week03-gif week04-gif week05-gif week06-gif week07-gif week08-gif week09-gif week10-gif week11-gif week12-gif \
 	week01-demo week02-demo week03-demo week04-demo week05-demo week06-demo week07-demo week08-demo week09-demo week10-demo week11-demo week12-demo \
-	week01-npm-audit week02-npm-audit week03-npm-audit week04-npm-audit week05-npm-audit week06-npm-audit week07-npm-audit week08-npm-audit week09-npm-audit week10-npm-audit week11-npm-audit week12-npm-audit \
+	week01-audit week02-audit week03-audit week04-audit week05-audit week06-audit week07-audit week08-audit week09-audit week10-audit week11-audit week12-audit \
 	week01-vercel-deploy week02-vercel-deploy week03-vercel-deploy week04-vercel-deploy week05-vercel-deploy week06-vercel-deploy week07-vercel-deploy week08-vercel-deploy week09-vercel-deploy week10-vercel-deploy week11-vercel-deploy week12-vercel-deploy
 
-.PHONY: all build clean help list size record gif demo record-all gif-all demo-all npm-audit npm-audit-all vercel-deploy vercel-deploy-all $(RECORDING_WEEK_TARGETS)
+.PHONY: all build clean help list size record gif demo record-all gif-all demo-all audit audit-all vercel-deploy vercel-deploy-all $(RECORDING_WEEK_TARGETS)
 
 all: build
 
@@ -43,17 +43,17 @@ help:
 	@echo "  make record         Record demo videos for all supported projects"
 	@echo "  make gif            Convert recent recordings to GIFs for all supported projects"
 	@echo "  make demo           Run full recording + GIF workflow for all supported projects"
-	@echo "  make npm-audit      Run npm audit fix for all supported projects"
+	@echo "  make audit          Run security audit for all supported projects (uses npm audit)"
 	@echo "  make vercel-deploy  Deploy all supported projects to Vercel"
 	@echo "  make record-all     Alias for make record"
 	@echo "  make gif-all        Alias for make gif"
 	@echo "  make demo-all       Alias for make demo"
-	@echo "  make npm-audit-all  Alias for make npm-audit"
+	@echo "  make audit-all      Alias for make audit"
 	@echo "  make vercel-deploy-all Alias for make vercel-deploy"
 	@echo "  make week01-demo    Run the full recording workflow for Week01"
 	@echo "  make week07-demo    Run the full recording workflow for Week07"
 	@echo "  make week12-demo    Run the full recording workflow for Week12"
-	@echo "  make weekXX-record / weekXX-gif / weekXX-demo / weekXX-npm-audit / weekXX-vercel-deploy also work for Week01 to Week12"
+	@echo "  make weekXX-record / weekXX-gif / weekXX-demo / weekXX-audit / weekXX-vercel-deploy also work for Week01 to Week12"
 
 build:
 	@set -e; \
@@ -100,7 +100,8 @@ demo:
 		$(MAKE) -C "$$project" demo; \
 	done
 
-npm-audit:
+# Security audit using npm (works with bun-managed projects)
+audit:
 	@for project in $(RECORDING_PROJECTS); do \
 		echo "==> $$project"; \
 		if [ -f "$$project/package.json" ]; then \
@@ -133,7 +134,7 @@ gif-all: gif
 
 demo-all: demo
 
-npm-audit-all: npm-audit
+audit-all: audit
 
 vercel-deploy-all: vercel-deploy
 
@@ -150,9 +151,9 @@ week$(1)-demo:
 	@echo "==> Week$(1)"
 	@$(MAKE) -C "Week$(1)" demo
 
-week$(1)-npm-audit:
+week$(1)-audit:
 	@echo "==> Week$(1)"
-	@$(MAKE) -C "Week$(1)" npm-audit
+	@$(MAKE) -C "Week$(1)" audit
 
 week$(1)-vercel-deploy:
 	@echo "==> Week$(1)"

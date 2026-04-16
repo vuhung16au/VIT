@@ -120,8 +120,7 @@ The application combines the best of both design systems:
 ## Getting Started
 
 ### Prerequisites
-- Node.js 16 or higher
-- npm or yarn
+- Bun 1.0 or higher
 
 ### Installation
 
@@ -132,12 +131,12 @@ cd Week01/02.Doctor-App
 
 2. Install dependencies:
 ```bash
-npm install
+bun install
 ```
 
 3. Start development server:
 ```bash
-npm run dev
+bun run dev
 ```
 
 4. Open browser to `http://localhost:5173`
@@ -146,10 +145,10 @@ npm run dev
 
 ```bash
 # Create optimized build
-npm run build
+bun run build
 
 # Preview production build
-npm run preview
+bun run preview
 ```
 
 ## User Journey
@@ -232,9 +231,9 @@ vercel --prod
 ### Configuration
 
 The project includes a `vercel.json` configuration file that specifies:
-- Build command: `npm run build`
+- Build command: `bun run build`
 - Output directory: `dist`
-- Install command: `npm install`
+- Install command: `bun install`
 
 ### Live Demo
 

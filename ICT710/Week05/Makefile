@@ -12,7 +12,7 @@ PACKAGE_JSONS := $(shell find . \
 	-name package.json -print | sort)
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 
-.PHONY: all build clean help list size record gif demo npm-audit vercel-deploy
+.PHONY: all build clean help list size record gif demo audit vercel-deploy
 
 all: build
 
@@ -29,7 +29,7 @@ help:
 	@echo "  make record Record the feedback-forge demo"
 	@echo "  make gif    Convert the latest recording to GIF"
 	@echo "  make demo   Run the full feedback-forge recording workflow"
-	@echo "  make npm-audit     Run npm audit fix for all projects"
+	@echo "  make audit         Run security audit for all projects (uses npm audit)"
 	@echo "  make vercel-deploy Deploy all projects to Vercel"
 
 list:
@@ -95,13 +95,14 @@ gif:
 demo: record gif
 	@echo "Demo video created at feedback-forge/images/feedback-forge.gif"
 
-npm-audit:
+# Security audit using npm (works with bun-managed projects)
+audit:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
 		echo "No npm projects found in $(CURDIR)"; \
 		exit 0; \
 	fi
 	@for dir in $(PACKAGE_DIRS); do \
-		echo "==> npm-audit $$dir"; \
+		echo "==> audit $$dir"; \
 		(cd "$$dir" && \
 			npm audit fix --legacy-peer-deps 2>/dev/null || \
 			npm audit fix --force --legacy-peer-deps 2>/dev/null || \

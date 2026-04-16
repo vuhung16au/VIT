@@ -26,13 +26,13 @@ See [QUICKSTART.md](./QUICKSTART.md) for detailed setup instructions.
 
 ```bash
 # Install dependencies
-npm install
+bun install
 
 # Start development server
-npm run dev
+bun run dev
 
 # Build for production
-npm run build
+bun run build
 ```
 
 ## 📋 Sections
@@ -147,9 +147,9 @@ vercel --prod
 ### Configuration
 
 The project includes a `vercel.json` configuration file that specifies:
-- Build command: `npm run build`
+- Build command: `bun run build`
 - Output directory: `dist`
-- Install command: `npm install`
+- Install command: `bun install`
 
 ### Live Demo
 

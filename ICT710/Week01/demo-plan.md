@@ -34,7 +34,7 @@ Create a simple doctor booking homepage that demonstrates basic IxD principles: 
      ```bash
      npx create-next-app@latest doctor-booking --typescript --tailwind --app --no-src-dir
      cd doctor-booking
-     npm run dev
+     bun run dev
      ```
    - Open http://localhost:3000
    - Open project in VS Code: `code .`

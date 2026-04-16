@@ -3,9 +3,9 @@
 ## Commands
 
 ```bash
-npm run record
-npm run gif
-npm run demo:record
+bun run record
+bun run gif
+bun run demo:record
 make demo
 ```
 

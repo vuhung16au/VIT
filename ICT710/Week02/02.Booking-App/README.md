@@ -22,10 +22,10 @@ A doctor booking web application for ICT710 Week 02. The project now supports bo
 
 ## How to use
 
-1. **Prerequisites:** Node.js 18+, MongoDB running locally (or set `MONGODB_URI`).
+1. **Prerequisites:** Bun 1.0+, MongoDB running locally (or set `MONGODB_URI`).
 2. **Backend:** From project root, run the API (see [QUICKSTART.md](./QUICKSTART.md)).
 3. **Frontend:** Run the Vite dev server and open the URL shown (e.g. http://localhost:5173).
-4. **Seed data (optional):** Run `npm run seed` in the `server` folder to add sample doctors.
+4. **Seed data (optional):** Run `bun run seed` in the `server` folder to add sample doctors.
 
 ## Week 02 demo routes
 
@@ -55,7 +55,7 @@ The home page now acts as a Week 02 demo hub. Key routes include:
 The frontend build was verified successfully with:
 
 ```bash
-PATH=/opt/homebrew/bin:$PATH /opt/homebrew/bin/npm run build
+PATH=/opt/homebrew/bin:$PATH /opt/homebrew/bin/bun run build
 ```
 
 ## Project structure
@@ -102,9 +102,9 @@ vercel --prod
 ### Configuration
 
 The project includes a `vercel.json` configuration file that specifies:
-- Build command: `npm run build`
+- Build command: `bun run build`
 - Output directory: `dist`
-- Install command: `npm install`
+- Install command: `bun install`
 
 ### Note
 

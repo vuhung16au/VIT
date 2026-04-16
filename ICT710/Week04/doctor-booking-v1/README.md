@@ -52,5 +52,5 @@ vercel --prod
 
 The project includes a `vercel.json` configuration file that specifies:
 - Framework: Next.js
-- Build command: `npm run build`
-- Install command: `npm install`
+- Build command: `bun run build`
+- Install command: `bun install`

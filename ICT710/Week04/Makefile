@@ -12,7 +12,7 @@ PACKAGE_JSONS := $(shell find . \
 	-name package.json -print | sort)
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 
-.PHONY: all build clean help list size npm-audit vercel-deploy
+.PHONY: all build clean help list size audit vercel-deploy
 
 all: build
 
@@ -26,7 +26,7 @@ help:
 	@echo "  make clean  Remove node_modules and build output to save space"
 	@echo "  make size   Show size summary for npm projects in this week"
 	@echo "  make list   List detected npm project folders"
-	@echo "  make npm-audit     Run npm audit fix for all projects"
+	@echo "  make audit         Run security audit for all projects (uses npm audit)"
 	@echo "  make vercel-deploy Deploy all projects to Vercel"
 
 list:
@@ -81,13 +81,14 @@ clean:
 		rm -rf "$$dir/node_modules" "$$dir/.next" "$$dir/dist" "$$dir/coverage" "$$dir/.turbo" "$$dir/.vite"; \
 	done
 
-npm-audit:
+# Security audit using npm (works with bun-managed projects)
+audit:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
 		echo "No npm projects found in $(CURDIR)"; \
 		exit 0; \
 	fi
 	@for dir in $(PACKAGE_DIRS); do \
-		echo "==> npm-audit $$dir"; \
+		echo "==> audit $$dir"; \
 		(cd "$$dir" && \
 			npm audit fix --legacy-peer-deps 2>/dev/null || \
 			npm audit fix --force --legacy-peer-deps 2>/dev/null || \

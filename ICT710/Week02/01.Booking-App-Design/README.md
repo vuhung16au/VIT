@@ -28,10 +28,10 @@ python3 -m http.server 4173
 
 Then open http://localhost:4173
 
-### Option 2: Using npm
+### Option 2: Using bun
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 ## 🚀 Deploy to Vercel

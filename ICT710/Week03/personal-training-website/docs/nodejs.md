@@ -38,11 +38,11 @@ Choose one method.
 
 From the project root:
 
-npm install
+bun install
 
 ## Run locally (development)
 
-npm run dev
+bun run dev
 
 Then open:
 

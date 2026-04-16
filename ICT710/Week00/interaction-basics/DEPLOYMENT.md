@@ -18,9 +18,9 @@ The project is configured with the following settings in `vercel.json`:
 ```json
 {
   "framework": "nextjs",
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
+  "buildCommand": "bun run build",
+  "installCommand": "bun install",
+  "devCommand": "bun run dev",
   "regions": ["sfo1"],
   "git": {
     "deploymentEnabled": true

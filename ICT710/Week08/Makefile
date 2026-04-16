@@ -13,7 +13,7 @@ PACKAGE_JSONS := $(shell find . \
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 DEMO_DIRS := requirements-hub
 
-.PHONY: all build clean help list size record gif demo npm-audit vercel-deploy
+.PHONY: all build clean help list size record gif demo audit vercel-deploy
 
 all: build
 
@@ -30,7 +30,7 @@ help:
 	@echo "  make record Record demos for projects in this week"
 	@echo "  make gif    Convert latest recordings to GIFs"
 	@echo "  make demo   Run full recording workflow for projects in this week"
-	@echo "  make npm-audit     Run npm audit fix for all projects"
+	@echo "  make audit         Run security audit for all projects (uses npm audit)"
 	@echo "  make vercel-deploy Deploy all projects to Vercel"
 
 list:
@@ -106,13 +106,14 @@ demo:
 		$(MAKE) -C "$$dir" demo; \
 	done
 
-npm-audit:
+# Security audit using npm (works with bun-managed projects)
+audit:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
 		echo "No npm projects found in $(CURDIR)"; \
 		exit 0; \
 	fi
 	@for dir in $(PACKAGE_DIRS); do \
-		echo "==> npm-audit $$dir"; \
+		echo "==> audit $$dir"; \
 		(cd "$$dir" && \
 			npm audit fix --legacy-peer-deps 2>/dev/null || \
 			npm audit fix --force --legacy-peer-deps 2>/dev/null || \

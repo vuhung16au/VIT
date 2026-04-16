@@ -2,20 +2,19 @@
 
 ## Prerequisites
 
-- Node.js 20+
-- npm 10+
+- Bun 1.0+
 
 ## Install
 
 ```bash
 cd Week07/persona-first
-npm install
+bun install
 ```
 
 ## Run Development Server
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 Open [http://127.0.0.1:3000](http://127.0.0.1:3000)
@@ -26,12 +25,12 @@ build setup in this workspace.
 ## Build Production Bundle
 
 ```bash
-npm run build
-npm run start
+bun run build
+bun run start
 ```
 
 ## Lint
 
 ```bash
-npm run lint
+bun run lint
 ```

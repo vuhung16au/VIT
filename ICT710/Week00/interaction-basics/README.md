@@ -36,15 +36,15 @@ This small project helps students:
 ## Run
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 ## Verify
 
 ```bash
-npm run build
-npm run lint
+bun run build
+bun run lint
 ```
 
 ## Deploy to Vercel
