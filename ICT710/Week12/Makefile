@@ -13,7 +13,7 @@ PACKAGE_JSONS := $(shell find . \
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 DEMO_DIRS := usability-lab-simulator
 
-.PHONY: all build clean help list size record gif demo
+.PHONY: all build clean help list size record gif demo npm-audit vercel-deploy
 
 all: build
 
@@ -30,6 +30,8 @@ help:
 	@echo "  make record Record demos for projects in this week"
 	@echo "  make gif    Convert latest recordings to GIFs"
 	@echo "  make demo   Run full recording workflow for projects in this week"
+	@echo "  make npm-audit     Run npm audit fix for all projects"
+	@echo "  make vercel-deploy Deploy all projects to Vercel"
 
 list:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
@@ -102,4 +104,35 @@ demo:
 	for dir in $(DEMO_DIRS); do \
 		echo "==> demo $$dir"; \
 		$(MAKE) -C "$$dir" demo; \
+	done
+
+npm-audit:
+	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
+		echo "No npm projects found in $(CURDIR)"; \
+		exit 0; \
+	fi
+	@for dir in $(PACKAGE_DIRS); do \
+		echo "==> npm-audit $$dir"; \
+		(cd "$$dir" && \
+			npm audit fix --legacy-peer-deps 2>/dev/null || \
+			npm audit fix --force --legacy-peer-deps 2>/dev/null || \
+			true; \
+			echo "Audit report:"; \
+			npm audit || true); \
+	done
+
+vercel-deploy:
+	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
+		echo "No npm projects found in $(CURDIR)"; \
+		exit 0; \
+	fi
+	@for dir in $(PACKAGE_DIRS); do \
+		if [ -f "$$dir/vercel.json" ] || [ -f "$$dir/package.json" ]; then \
+			echo "==> vercel-deploy $$dir"; \
+			(cd "$$dir" && npx vercel --prod) || { \
+				echo "⚠️  Deployment failed for $$dir, continuing..."; \
+			}; \
+		else \
+			echo "Skipping $$dir (no vercel.json or package.json)"; \
+		fi; \
 	done

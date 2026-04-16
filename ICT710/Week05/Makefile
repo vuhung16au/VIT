@@ -12,7 +12,7 @@ PACKAGE_JSONS := $(shell find . \
 	-name package.json -print | sort)
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 
-.PHONY: all build clean help list size record gif demo
+.PHONY: all build clean help list size record gif demo npm-audit vercel-deploy
 
 all: build
 
@@ -29,6 +29,8 @@ help:
 	@echo "  make record Record the feedback-forge demo"
 	@echo "  make gif    Convert the latest recording to GIF"
 	@echo "  make demo   Run the full feedback-forge recording workflow"
+	@echo "  make npm-audit     Run npm audit fix for all projects"
+	@echo "  make vercel-deploy Deploy all projects to Vercel"
 
 list:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
@@ -92,3 +94,34 @@ gif:
 
 demo: record gif
 	@echo "Demo video created at feedback-forge/images/feedback-forge.gif"
+
+npm-audit:
+	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
+		echo "No npm projects found in $(CURDIR)"; \
+		exit 0; \
+	fi
+	@for dir in $(PACKAGE_DIRS); do \
+		echo "==> npm-audit $$dir"; \
+		(cd "$$dir" && \
+			npm audit fix --legacy-peer-deps 2>/dev/null || \
+			npm audit fix --force --legacy-peer-deps 2>/dev/null || \
+			true; \
+			echo "Audit report:"; \
+			npm audit || true); \
+	done
+
+vercel-deploy:
+	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
+		echo "No npm projects found in $(CURDIR)"; \
+		exit 0; \
+	fi
+	@for dir in $(PACKAGE_DIRS); do \
+		if [ -f "$$dir/vercel.json" ] || [ -f "$$dir/package.json" ]; then \
+			echo "==> vercel-deploy $$dir"; \
+			(cd "$$dir" && npx vercel --prod) || { \
+				echo "⚠️  Deployment failed for $$dir, continuing..."; \
+			}; \
+		else \
+			echo "Skipping $$dir (no vercel.json or package.json)"; \
+		fi; \
+	done
