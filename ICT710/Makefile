@@ -26,7 +26,7 @@ RECORDING_WEEK_TARGETS := \
 	week01-audit week02-audit week03-audit week04-audit week05-audit week06-audit week07-audit week08-audit week09-audit week10-audit week11-audit week12-audit \
 	week01-vercel-deploy week02-vercel-deploy week03-vercel-deploy week04-vercel-deploy week05-vercel-deploy week06-vercel-deploy week07-vercel-deploy week08-vercel-deploy week09-vercel-deploy week10-vercel-deploy week11-vercel-deploy week12-vercel-deploy
 
-.PHONY: all build clean help list size record gif demo record-all gif-all demo-all audit audit-all vercel-deploy vercel-deploy-all $(RECORDING_WEEK_TARGETS)
+.PHONY: all build clean help list size record gif demo record-all gif-all demo-all audit audit-all vercel-deploy vercel-deploy-all deploy $(RECORDING_WEEK_TARGETS)
 
 all: build
 
@@ -49,6 +49,7 @@ help:
 	@echo "  make gif-all        Alias for make gif"
 	@echo "  make demo-all       Alias for make demo"
 	@echo "  make audit-all      Alias for make audit"
+	@echo "  make deploy         Alias for make vercel-deploy"
 	@echo "  make vercel-deploy-all Alias for make vercel-deploy"
 	@echo "  make week01-demo    Run the full recording workflow for Week01"
 	@echo "  make week07-demo    Run the full recording workflow for Week07"
@@ -135,6 +136,8 @@ gif-all: gif
 demo-all: demo
 
 audit-all: audit
+
+deploy: vercel-deploy
 
 vercel-deploy-all: vercel-deploy
 
