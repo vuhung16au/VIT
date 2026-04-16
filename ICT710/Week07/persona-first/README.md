@@ -4,6 +4,10 @@
 doctor-booking service can be redesigned differently for three distinct personas instead of
 offering one generic interface to everyone.
 
+## Demo
+
+[https://persona-first.vercel.app](https://persona-first.vercel.app)
+
 ## What this project demonstrates
 
 1. A persona selector that sets the design context for the whole demo
@@ -34,3 +38,24 @@ offering one generic interface to everyone.
 - `docs/Persona-Research.md` - how the personas were derived
 - `docs/Journey-Mapping-Guide.md` - how the journey maps are structured
 - `docs/Usability-Guidelines.md` - the checklist used in Demo 2
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://persona-first.vercel.app](https://persona-first.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`

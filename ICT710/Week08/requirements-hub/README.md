@@ -4,6 +4,10 @@
 research and personas into structured requirements, user stories, use cases, traceability views,
 and a MoSCoW prioritization board for the doctor booking app.
 
+## Demo
+
+[https://requirements-hub.vercel.app](https://requirements-hub.vercel.app)
+
 ## What this project demonstrates
 
 1. Functional requirements for the booking domain
@@ -39,3 +43,24 @@ and a MoSCoW prioritization board for the doctor booking app.
 - `docs/Requirements-Specification.md` - consolidated requirements reference
 - `docs/User-Story-Template.md` - story-writing guide for students
 - `docs/Prioritization-Guide.md` - MoSCoW method summary
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://requirements-hub.vercel.app](https://requirements-hub.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`

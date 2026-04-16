@@ -4,6 +4,10 @@ A frontend-only Next.js + Tailwind CSS demo for Week 06 of ICT710. The project c
 multimodal, spatial, adaptive, and AI-native interface types for the same doctor-booking task and
 adds an interface-evolution timeline.
 
+## Demo
+
+[https://interface-playground.vercel.app](https://interface-playground.vercel.app)
+
 ## What This Demo Shows
 
 1. Classic interfaces such as CLI, GUI, and touch
@@ -40,3 +44,24 @@ adds an interface-evolution timeline.
 - `/smart` - Smart interfaces and Zero UI
 - `/generative` - Generative UI and liquid interfaces
 - `/timeline` - Interface evolution timeline
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://interface-playground.vercel.app](https://interface-playground.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`

@@ -4,6 +4,10 @@
 heuristic evaluation, cognitive walkthroughs, analytics review, inspection checklists, and simple
 comparative evaluation across earlier projects.
 
+## Demo
+
+[https://evaluation-toolkit.vercel.app](https://evaluation-toolkit.vercel.app)
+
 ## What this project demonstrates
 
 1. Heuristic evaluation using Nielsen&apos;s 10 heuristics
@@ -27,3 +31,24 @@ comparative evaluation across earlier projects.
 - `docs/Key-Takeaways.md` - brief IxD, UI, and UX lessons learned
 - `docs/Nielsens-Heuristics.md` - heuristic reference
 - `docs/Report-Template.md` - evaluation reporting template
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://evaluation-toolkit.vercel.app](https://evaluation-toolkit.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`

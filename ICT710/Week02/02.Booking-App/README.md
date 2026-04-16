@@ -2,6 +2,10 @@
 
 A doctor booking web application for ICT710 Week 02. The project now supports both the original booking flow and the Week 02 teaching demos for problem-space analysis and interaction-type exploration.
 
+## Demo
+
+[https://booking-app-week02.vercel.app](https://booking-app-week02.vercel.app)
+
 ## Technologies
 
 - **Frontend:** Vite, React, Tailwind CSS — UI and client-side routing.
@@ -80,3 +84,34 @@ Important frontend pages now include:
 - `src/pages/Appointments.jsx`
 
 See [QUICKSTART.md](./QUICKSTART.md) for run instructions.
+
+## 🚀 Deploy to Vercel
+
+This project is configured for easy deployment to Vercel (frontend only).
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
+
+### Note
+
+The deployed version includes the frontend only. For full functionality with backend API, you'll need to:
+- Deploy the backend separately (e.g., to Vercel Serverless Functions or another service)
+- Update API endpoints in the frontend configuration
+
+### Live Demo
+
+Visit the deployed frontend: [https://booking-app-week02.vercel.app](https://booking-app-week02.vercel.app)

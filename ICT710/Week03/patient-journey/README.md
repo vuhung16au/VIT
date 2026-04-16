@@ -4,8 +4,11 @@ A frontend-only Next.js + Tailwind CSS demo that visualizes the holistic healthc
 
 This project follows the FRD in `02.Week03/FRD-Patient-Journey.md` and demonstrates key IxD/UX principles in 4 scenes.
 
+## Demo
 
-# Screenshots / Demo 
+[https://patient-journey-virid.vercel.app](https://patient-journey-virid.vercel.app)
+
+## Screenshots
 
 ![The Patient Journey Demo](images/patient-journey.gif)
 
@@ -35,3 +38,24 @@ This project follows the FRD in `02.Week03/FRD-Patient-Journey.md` and demonstra
 - `/scene-2` - Scene 2: Cognitive Load Reduction
 - `/scene-3` - Scene 3: Social Interaction in Telehealth
 - `/scene-4` - Scene 4: Emotional Design for Trust and Calm
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://patient-journey-virid.vercel.app](https://patient-journey-virid.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`

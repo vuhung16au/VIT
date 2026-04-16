@@ -2,6 +2,10 @@
 
 A frontend-only Next.js + Tailwind CSS demo for Week 03 of ICT710. The project focuses on user experience foundations through cognitive UX, social UX, emotional trust-building, and A/B testing.
 
+## Demo
+
+[https://cognitive-social-ux.vercel.app](https://cognitive-social-ux.vercel.app)
+
 ## What This Demo Shows
 
 1. Cognitive UX demos for attention, memory, and learning.
@@ -33,3 +37,24 @@ A frontend-only Next.js + Tailwind CSS demo for Week 03 of ICT710. The project f
 - `/ab-testing` - A/B testing simulator
 - `/key-takeaways` - Student reflection summary
 - `/concepts` - UX concept mapping
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://cognitive-social-ux.vercel.app](https://cognitive-social-ux.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`

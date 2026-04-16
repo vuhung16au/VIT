@@ -2,11 +2,13 @@
 
 A modern, responsive personal portfolio website built with React and Tailwind CSS, featuring dark/light theme support and smooth animations.
 
+## Demo
+
+[https://create-personal-website.vercel.app](https://create-personal-website.vercel.app)
+
 # Screenshots
 
 ![localhost](images/localhost5173.png) ![VScode](images/VSCode.png)
-
-Live [demo](https://personal-website-navy-chi.vercel.app/): https://personal-website-navy-chi.vercel.app/
 
 ## ✨ Features
 
@@ -128,7 +130,32 @@ theme: {
 - Safari (latest)
 - Edge (latest)
 
-## 📄 License
+## � Deploy to Vercel
+
+This project is configured for easy deployment to Vercel.
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
+
+### Live Demo
+
+Visit the deployed version: [https://create-personal-website.vercel.app](https://create-personal-website.vercel.app)
+
+## �📄 License
 
 This project is open source and available for personal and educational use.
 

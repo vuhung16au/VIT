@@ -2,6 +2,10 @@
 
 A frontend-only Next.js demo for Week 05 of ICT710. The project adds practical data gathering techniques to a doctor booking experience, including questionnaires, interview scheduling, observational analytics, and triangulated insights.
 
+## Demo
+
+[https://feedback-forge-rho.vercel.app](https://feedback-forge-rho.vercel.app)
+
 ## What This Demo Shows
 
 1. An in-app questionnaire shown after booking completion.
@@ -29,3 +33,24 @@ A frontend-only Next.js demo for Week 05 of ICT710. The project adds practical d
 - `/booking-complete` - Post-booking questionnaire
 - `/admin/analytics` - Usage observation dashboard
 - `/admin/insights` - Data triangulation dashboard
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://feedback-forge-rho.vercel.app](https://feedback-forge-rho.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`

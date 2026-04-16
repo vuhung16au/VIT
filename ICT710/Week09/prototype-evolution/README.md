@@ -4,6 +4,10 @@
 shows how a doctor-booking idea evolves from paper sketches to wireframes, low-fi interactive
 screens, and a polished high-fi prototype.
 
+## Demo
+
+[https://prototype-evolution.vercel.app](https://prototype-evolution.vercel.app)
+
 ## What this project demonstrates
 
 1. A gallery of four fidelity levels
@@ -28,5 +32,26 @@ screens, and a polished high-fi prototype.
 
 - `docs/Key-Takeaways.md` - brief IxD, UI, and UX lessons learned
 - `docs/Prototyping-Guide.md` - when to use each fidelity
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://prototype-evolution.vercel.app](https://prototype-evolution.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`
 - `docs/Testing-Script.md` - how to test prototypes with users
 - `docs/Paper-Prototype-Kit.md` - printable-template guidance and sketching tips

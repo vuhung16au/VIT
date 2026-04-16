@@ -2,6 +2,10 @@
 
 A frontend-only Next.js + Tailwind CSS demo for Week 04 of ICT710. The project applies the Double Diamond framework by starting with a deliberately poor design, defining the problem, building two alternatives, and comparing them through an A/B testing dashboard.
 
+## Demo
+
+[https://doctor-booking-v1.vercel.app](https://doctor-booking-v1.vercel.app)
+
 ## What This Demo Shows
 
 1. A deliberately poor booking form for heuristic critique.
@@ -29,3 +33,24 @@ A frontend-only Next.js + Tailwind CSS demo for Week 04 of ICT710. The project a
 - `/version-a-multistep` - Progressive disclosure multi-step flow
 - `/version-b-singlepage` - Accordion-based single-page flow
 - `/ab-test` - Metrics and winner analysis dashboard
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://doctor-booking-v1.vercel.app](https://doctor-booking-v1.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`

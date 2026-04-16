@@ -2,6 +2,10 @@
 
 A modern healthcare application that enables patients to search for doctors, book appointments, and access video consultations. The current Week 01 implementation also serves as an Interaction Design (IxD) demo, highlighting motion, visual feedback, spacing, and live input response on the homepage.
 
+## Demo
+
+[https://doctor-booking-app-dun.vercel.app](https://doctor-booking-app-dun.vercel.app)
+
 ## Overview
 
 This platform provides a comprehensive solution for patients to manage their healthcare needs online. Users can discover qualified healthcare professionals across various specialties, schedule appointments (both in-person and virtual), and maintain their medical records in one convenient location, while the homepage demonstrates beginner-friendly IxD principles through an interactive booking and search experience.
@@ -9,8 +13,6 @@ This platform provides a comprehensive solution for patients to manage their hea
 ## Screenshots
 
 ![localhost](images/localhost5173.png) ![VSCode](images/VSCode.png)
-
-Live [demo](https://doctor-app-tawny.vercel.app/): https://doctor-app-tawny.vercel.app/
 
 ## Key Features
 
@@ -212,6 +214,31 @@ This version is aligned to the Week 01 demo plan and is especially useful for te
 - **Notifications**: Email and SMS appointment reminders
 - **Chat Support**: Real-time messaging with doctors
 - **Multi-language**: Internationalization (i18n) support
+
+## 🚀 Deploy to Vercel
+
+This project is configured for easy deployment to Vercel.
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
+
+### Live Demo
+
+Visit the deployed version: [https://doctor-booking-app-dun.vercel.app](https://doctor-booking-app-dun.vercel.app)
 
 ## License
 

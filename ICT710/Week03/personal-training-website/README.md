@@ -2,6 +2,10 @@
 
 This is a modern, responsive website built for a personal training business. It features an energetic design with a vibrant color palette, tailored to showcase services, client testimonials, and simple online booking via Google Forms.
 
+## Demo
+
+[https://personal-training-website-rho.vercel.app](https://personal-training-website-rho.vercel.app)
+
 ## Technology Stack
 
 - **React / Next.js (App Router)**: The core framework for optimal performance and SEO.
@@ -35,6 +39,18 @@ This is a modern, responsive website built for a personal training business. It 
 
 ## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is deployed on Vercel: [https://personal-training-website-rho.vercel.app](https://personal-training-website-rho.vercel.app)
+
+### Deploy to Vercel
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+The project includes a `vercel.json` configuration file for optimal deployment settings.
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

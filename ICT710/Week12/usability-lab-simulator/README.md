@@ -3,6 +3,10 @@
 `usability-lab-simulator` is the Week 12 ICT710 demo project for Usability Testing. It walks
 through planning, recruiting, moderating, analyzing, and reporting moderated usability studies.
 
+## Demo
+
+[https://usability-lab-simulator.vercel.app](https://usability-lab-simulator.vercel.app)
+
 ## What this project demonstrates
 
 1. Test planning with objectives, tasks, and metrics
@@ -28,3 +32,24 @@ through planning, recruiting, moderating, analyzing, and reporting moderated usa
 - `docs/Think-Aloud-Guide.md` - how to conduct think-aloud
 - `docs/Moderator-Script.md` - example moderation script
 - `docs/Consent-Form-Template.md` - consent template
+
+## 🚀 Deploy to Vercel
+
+This project is deployed on Vercel: [https://usability-lab-simulator.vercel.app](https://usability-lab-simulator.vercel.app)
+
+### Quick Deploy
+
+```bash
+# From the project directory
+vercel --yes
+
+# For production deployment
+vercel --prod
+```
+
+### Configuration
+
+The project includes a `vercel.json` configuration file that specifies:
+- Framework: Next.js
+- Build command: `npm run build`
+- Install command: `npm install`
