@@ -23,6 +23,13 @@ export function RequirementCard({ requirement }: RequirementCardProps) {
 
         <p className="text-muted mb-3">{isFunctional ? requirement.description : requirement.statement}</p>
 
+        {requirement.evidence && (
+          <>
+            <div className="small text-muted mb-1">Research evidence</div>
+            <p className="mb-3 small">{requirement.evidence}</p>
+          </>
+        )}
+
         {isFunctional ? (
           <>
             <div className="small text-muted mb-1">Personas</div>

@@ -12,6 +12,7 @@ export const functionalRequirements: FunctionalRequirement[] = [
       "Results show matching doctors with clear labels.",
     ],
     mappedFeature: "Specialty search panel",
+    evidence: "Week 05 research: patients frequently filtered by specialty before choosing a doctor.",
   },
   {
     id: "FR-002",
@@ -24,6 +25,7 @@ export const functionalRequirements: FunctionalRequirement[] = [
       "Unavailable slots are clearly disabled.",
     ],
     mappedFeature: "Live availability view",
+    evidence: "Persona Sarah: needs trustworthy slots to avoid double-booking around work.",
   },
   {
     id: "FR-003",
@@ -72,6 +74,7 @@ export const functionalRequirements: FunctionalRequirement[] = [
       "The booking flow distinguishes who the appointment is for.",
     ],
     mappedFeature: "Family account booking",
+    evidence: "Persona Maya: books for children and dependents from one account.",
   },
   {
     id: "FR-007",
@@ -120,5 +123,20 @@ export const functionalRequirements: FunctionalRequirement[] = [
       "Reminders are scheduled before the appointment date.",
     ],
     mappedFeature: "Reminder settings",
+    evidence: "Persona Robert: relies on reminders to reduce missed appointments.",
+  },
+  {
+    id: "FR-011",
+    title: "Reschedule appointments",
+    description:
+      "The system shall allow users to change the date or time of an existing booking without starting from search again when policy allows.",
+    priority: "Should Have",
+    personas: ["Sarah", "Maya", "Robert"],
+    acceptanceCriteria: [
+      "Users can open an existing booking and choose a new slot from current availability.",
+      "The system applies clinic cut-off rules and shows confirmation after reschedule.",
+    ],
+    mappedFeature: "Reschedule flow from booking detail",
+    evidence: "Week 07 journeys: users often adjust appointments after plans change.",
   },
 ];

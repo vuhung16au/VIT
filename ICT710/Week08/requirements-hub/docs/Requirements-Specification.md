@@ -9,7 +9,7 @@ persona needs become design and delivery decisions.
 
 - Search for doctors
 - View availability
-- Book and cancel appointments
+- Book, cancel, and reschedule appointments
 - Book for family members
 - Receive reminders
 - Support accessible and reliable interactions
@@ -21,6 +21,7 @@ persona needs become design and delivery decisions.
 - FR-003 Send booking confirmation
 - FR-006 Book for family members
 - FR-010 Provide appointment reminders
+- FR-011 Reschedule appointments
 
 ## Non-functional requirement examples
 
@@ -28,6 +29,7 @@ persona needs become design and delivery decisions.
 - NFR-U2 WCAG 2.1 AA accessibility
 - NFR-P1 Initial page load under 2 seconds
 - NFR-S1 Patient data encrypted in transit and at rest
+- NFR-C1 Privacy and retention aligned with healthcare compliance expectations
 
 ## Traceability principle
 

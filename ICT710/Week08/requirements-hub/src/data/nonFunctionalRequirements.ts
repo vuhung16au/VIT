@@ -16,6 +16,7 @@ export const nonFunctionalRequirements: NonFunctionalRequirement[] = [
     measure: "Accessible color contrast, keyboard access, and semantic structure.",
     designImpact: "Drives contrast, focus states, and readable layouts.",
     priority: "Must Have",
+    evidence: "Persona Robert: accessibility and readability are primary usability goals.",
   },
   {
     id: "NFR-U3",
@@ -32,6 +33,7 @@ export const nonFunctionalRequirements: NonFunctionalRequirement[] = [
     measure: "Primary pages load in under 2 seconds on baseline test devices.",
     designImpact: "Encourages lightweight layouts and fast initial content.",
     priority: "Must Have",
+    evidence: "Week 05 notes: many bookings start on mobile with uneven connectivity.",
   },
   {
     id: "NFR-P2",
@@ -72,5 +74,18 @@ export const nonFunctionalRequirements: NonFunctionalRequirement[] = [
     measure: "Protected flows require a verified user session.",
     designImpact: "Shapes sign-in, session timeout, and privacy messaging.",
     priority: "Must Have",
+    evidence: "Clinic stakeholders: authenticated booking required for patient data handling.",
+  },
+  {
+    id: "NFR-C1",
+    category: "Compliance",
+    statement:
+      "The system shall handle health-related booking data according to applicable privacy regulations and clinic retention policies.",
+    measure:
+      "Privacy policy, consent flows, and data retention rules are documented and reviewable; access is limited to authorized roles.",
+    designImpact:
+      "Influences what is shown on shared screens, audit logs, and export or deletion requests.",
+    priority: "Must Have",
+    evidence: "Healthcare context: compliance expectations align with HIPAA-style privacy practice for PHI.",
   },
 ];

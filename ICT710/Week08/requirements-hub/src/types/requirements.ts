@@ -8,15 +8,17 @@ export type FunctionalRequirement = {
   personas: string[];
   acceptanceCriteria: string[];
   mappedFeature: string;
+  evidence?: string;
 };
 
 export type NonFunctionalRequirement = {
   id: string;
-  category: "Usability" | "Performance" | "Reliability" | "Security";
+  category: "Usability" | "Performance" | "Reliability" | "Security" | "Compliance";
   statement: string;
   measure: string;
   designImpact: string;
   priority: Priority;
+  evidence?: string;
 };
 
 export type UserStory = {
@@ -36,6 +38,9 @@ export type UseCase = {
   summary: string;
   includes?: string[];
   extends?: string[];
+  preconditions?: string[];
+  postconditions?: string[];
+  alternatives?: string[];
   mainFlow: string[];
 };
 
@@ -50,6 +55,6 @@ export type TraceabilityItem = {
   requirementId: string;
   persona: string;
   storyId: string;
-  feature: string;
+  mapsTo: string;
   priority: Priority;
 };

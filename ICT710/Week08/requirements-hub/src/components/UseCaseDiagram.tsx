@@ -74,14 +74,53 @@ export function UseCaseDiagram({ useCases }: UseCaseDiagramProps) {
               </>
             )}
 
+            {selected.preconditions && selected.preconditions.length > 0 && (
+              <>
+                <div className="small text-muted mb-1">Preconditions</div>
+                <ul className="mb-3">
+                  {selected.preconditions.map((item) => (
+                    <li key={item} className="mb-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+
             <div className="small text-muted mb-1">Main flow</div>
-            <ol className="mb-0">
+            <ol className="mb-3">
               {selected.mainFlow.map((step) => (
                 <li key={step} className="mb-2">
                   {step}
                 </li>
               ))}
             </ol>
+
+            {selected.alternatives && selected.alternatives.length > 0 && (
+              <>
+                <div className="small text-muted mb-1">Alternative flows</div>
+                <ul className="mb-3">
+                  {selected.alternatives.map((item) => (
+                    <li key={item} className="mb-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            {selected.postconditions && selected.postconditions.length > 0 && (
+              <>
+                <div className="small text-muted mb-1">Postconditions</div>
+                <ul className="mb-0">
+                  {selected.postconditions.map((item) => (
+                    <li key={item} className="mb-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
         </div>
       </div>

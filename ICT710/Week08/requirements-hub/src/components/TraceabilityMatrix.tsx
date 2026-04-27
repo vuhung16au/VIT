@@ -16,7 +16,7 @@ export function TraceabilityMatrix({ items }: TraceabilityMatrixProps) {
                 <th>Requirement</th>
                 <th>Persona</th>
                 <th>User Story</th>
-                <th>Feature</th>
+                <th>Maps to</th>
                 <th>Priority</th>
               </tr>
             </thead>
@@ -26,7 +26,7 @@ export function TraceabilityMatrix({ items }: TraceabilityMatrixProps) {
                   <td>{item.requirementId}</td>
                   <td>{item.persona}</td>
                   <td>{item.storyId}</td>
-                  <td>{item.feature}</td>
+                  <td>{item.mapsTo}</td>
                   <td>
                     <PriorityBadge priority={item.priority} />
                   </td>

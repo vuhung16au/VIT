@@ -11,7 +11,7 @@ export const userStories: UserStory[] = [
       "Given Sarah is signed in, when she selects quick book, then she can confirm from one screen.",
       "And confirmation appears within 2 seconds of submission.",
     ],
-    relatedRequirements: ["FR-001", "FR-002", "FR-007", "NFR-U1"],
+    relatedRequirements: ["FR-001", "FR-002", "FR-007", "FR-011", "NFR-U1"],
   },
   {
     id: "US-002",
@@ -23,7 +23,7 @@ export const userStories: UserStory[] = [
       "Given Robert opens booking, when he starts the flow, then he sees one clear step at a time.",
       "And text remains readable at larger font sizes.",
     ],
-    relatedRequirements: ["FR-003", "FR-010", "NFR-U2", "NFR-U3"],
+    relatedRequirements: ["FR-003", "FR-010", "NFR-U2", "NFR-U3", "NFR-C1"],
   },
   {
     id: "US-003",
@@ -35,7 +35,7 @@ export const userStories: UserStory[] = [
       "Given Maya has family profiles saved, when she starts a booking, then she can choose who the appointment is for.",
       "And reminder settings can be customized per appointment.",
     ],
-    relatedRequirements: ["FR-006", "FR-010", "FR-008"],
+    relatedRequirements: ["FR-006", "FR-010", "FR-008", "FR-011", "NFR-C1"],
   },
   {
     id: "US-004",
