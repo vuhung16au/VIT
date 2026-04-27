@@ -39,10 +39,21 @@ export default function PrioritizationPage() {
             <div className="card-body p-4 p-md-5">
               <p className="text-uppercase text-success fw-semibold small mb-1">Demo 2</p>
               <h1 className="display-6 fw-bold">MoSCoW prioritization</h1>
-              <p className="text-muted mb-0 col-lg-8">
-                Prioritize scope based on user impact, implementation effort, and delivery risk so
-                the team can define a realistic MVP.
-              </p>
+              <div className="text-muted col-lg-9">
+                <p className="mb-3">
+                  Prioritize scope based on user impact, implementation effort, and delivery risk so
+                  the team can define a realistic MVP.
+                </p>
+                <p className="mb-0 small">
+                  <strong className="text-body">MoSCoW</strong> is a lightweight prioritization
+                  technique: <strong className="text-body">Must</strong> items are non‑negotiable
+                  for the agreed release; <strong className="text-body">Should</strong> items are
+                  important if capacity allows; <strong className="text-body">Could</strong> items are
+                  desirable extras when time is left over;{" "}
+                  <strong className="text-body">Won&apos;t</strong> (this time) records what is
+                  explicitly deferred so expectations stay clear and scope does not creep.
+                </p>
+              </div>
             </div>
           </div>
         </div>

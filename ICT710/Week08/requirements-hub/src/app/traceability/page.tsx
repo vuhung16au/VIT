@@ -28,9 +28,17 @@ export default function TraceabilityPage() {
           <div className="card section-card">
             <div className="card-body p-4 p-md-5">
               <h1 className="display-6 fw-bold">Traceability matrix</h1>
-              <p className="text-muted mb-0">
-                Connect requirements to personas, user stories, and concrete product features.
-              </p>
+              <div className="text-muted col-lg-9">
+                <p className="mb-3">
+                  Connect requirements to personas, user stories, and concrete product features.
+                </p>
+                <p className="mb-0 small">
+                  Traceability shows that every requirement is backed by real user needs and
+                  lands in shippable work. It helps spot gaps (stories without requirements or the
+                  reverse), assess change impact when something shifts, and explain scope to
+                  stakeholders and auditors without hunting through documents.
+                </p>
+              </div>
             </div>
           </div>
         </div>
