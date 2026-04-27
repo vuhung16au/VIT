@@ -12,7 +12,7 @@ PACKAGE_JSONS := $(shell find . \
 	-name package.json -print | sort)
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 
-.PHONY: all build clean help list size audit vercel-deploy
+.PHONY: all build clean help list size audit vercel-deploy deploy
 
 all: build
 
@@ -28,6 +28,7 @@ help:
 	@echo "  make list   List detected npm project folders"
 	@echo "  make audit         Run security audit for all projects (uses npm audit)"
 	@echo "  make vercel-deploy Deploy all projects to Vercel"
+	@echo "  make deploy   Alias for make vercel-deploy"
 
 list:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
@@ -112,3 +113,5 @@ vercel-deploy:
 			echo "Skipping $$dir (no vercel.json or package.json)"; \
 		fi; \
 	done
+
+deploy: vercel-deploy

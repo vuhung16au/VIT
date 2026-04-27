@@ -13,7 +13,7 @@ PACKAGE_JSONS := $(shell find . \
 PACKAGE_DIRS := $(sort $(patsubst %/,%,$(dir $(PACKAGE_JSONS))))
 DEMO_DIRS := evaluation-toolkit
 
-.PHONY: all build clean help list size record gif demo audit vercel-deploy
+.PHONY: all build clean help list size record gif demo audit vercel-deploy deploy
 
 all: build
 
@@ -32,6 +32,7 @@ help:
 	@echo "  make demo   Run full recording workflow for projects in this week"
 	@echo "  make audit         Run security audit for all projects (uses npm audit)"
 	@echo "  make vercel-deploy Deploy all projects to Vercel"
+	@echo "  make deploy   Alias for make vercel-deploy"
 
 list:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
@@ -137,3 +138,5 @@ vercel-deploy:
 			echo "Skipping $$dir (no vercel.json or package.json)"; \
 		fi; \
 	done
+
+deploy: vercel-deploy
