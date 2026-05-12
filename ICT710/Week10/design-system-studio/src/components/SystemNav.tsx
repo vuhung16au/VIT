@@ -11,6 +11,9 @@ const links = [
   { href: "/components/forms", label: "Forms" },
   { href: "/components/cards", label: "Cards" },
   { href: "/components/navigation", label: "Navigation" },
+  { href: "/patterns/feedback", label: "Feedback", optional: true },
+  { href: "/screens/booking-dashboard", label: "Screen", optional: true },
+  { href: "/themes/brand-variants", label: "Themes", optional: true },
 ];
 
 type SystemNavProps = {
@@ -27,9 +30,10 @@ export function SystemNav({ currentPath }: SystemNavProps) {
             <Link
               key={link.href}
               href={link.href}
-              className={`btn ${currentPath === link.href ? "btn-primary" : "btn-outline-primary"}`}
+              className={`btn d-inline-flex align-items-center gap-2 ${currentPath === link.href ? "btn-primary" : "btn-outline-primary"} ${link.optional ? "optional-nav-link" : ""}`}
             >
               {link.label}
+              {link.optional ? <span className="optional-badge optional-badge--nav">Self study</span> : null}
             </Link>
           ))}
         </div>

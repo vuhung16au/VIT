@@ -12,8 +12,11 @@ language that scales.
 
 1. Foundations for typography, colors, icons, layout, and motion
 2. A reusable component library for buttons, forms, cards, and navigation
-3. Design tokens defined once and reused across pages
-4. Interactive component previews and usage guidance
+3. Pattern-level examples for feedback states, validation, and empty moments
+4. A complete booking dashboard screen assembled from the same design rules
+5. Brand-variant comparisons showing how one structure can express different voices
+6. Design tokens defined once and reused across pages
+7. Interactive component previews and usage guidance
 
 ## Route map
 
@@ -27,6 +30,9 @@ language that scales.
 - `/components/forms` - Form patterns
 - `/components/cards` - Card styles
 - `/components/navigation` - Navigation patterns
+- `/patterns/feedback` - Alerts, validation, and empty states
+- `/screens/booking-dashboard` - Full screen composition example
+- `/themes/brand-variants` - Same structure, different design languages
 
 ## Docs
 

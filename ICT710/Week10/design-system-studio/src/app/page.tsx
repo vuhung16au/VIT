@@ -10,6 +10,9 @@ const sections = [
   { title: "Layout", href: "/foundations/layout", description: "12-column grid, breakpoints, and spacing scale." },
   { title: "Motion", href: "/foundations/motion", description: "Timing, easing, and micro-interaction principles." },
   { title: "Buttons", href: "/components/buttons", description: "Component variants, states, and playground." },
+  { title: "Feedback Patterns", href: "/patterns/feedback", description: "Alerts, validation, empty states, and system response.", optional: true },
+  { title: "Booking Dashboard", href: "/screens/booking-dashboard", description: "A full screen assembled from the same tokens and components.", optional: true },
+  { title: "Brand Variants", href: "/themes/brand-variants", description: "One structure expressed through two distinct design languages.", optional: true },
 ];
 
 export default function HomePage() {
@@ -36,11 +39,18 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <div className="col-12">
+          <div className="optional-callout">
+            Items marked <span className="optional-badge">Self study</span> are optional enrichment demos.
+            They are useful for exploration, but not required for this course.
+          </div>
+        </div>
         {sections.map((section) => (
           <div key={section.href} className="col-md-6 col-lg-4">
             <Link href={section.href} className="text-decoration-none">
-              <div className="card border-0 shadow-sm h-100 motion-demo">
+              <div className={`card border-0 shadow-sm h-100 motion-demo ${section.optional ? "optional-card" : ""}`}>
                 <div className="card-body p-4">
+                  {section.optional ? <div className="mb-3"><span className="optional-badge">Self study</span></div> : null}
                   <h2 className="h4 fw-bold text-dark">{section.title}</h2>
                   <p className="text-muted mb-0">{section.description}</p>
                 </div>

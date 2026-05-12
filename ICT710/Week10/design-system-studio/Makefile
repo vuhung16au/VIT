@@ -7,7 +7,7 @@ else
 NPM := $(NPM_CANDIDATE)
 endif
 
-.PHONY: help install ensure-deps build record gif demo clean
+.PHONY: help install ensure-deps build record gif demo deploy vercel-deploy clean
 
 help:
 	@echo "Recording Makefile ($(notdir $(CURDIR)))"
@@ -16,6 +16,7 @@ help:
 	@echo "  make record   Record a demo video"
 	@echo "  make gif      Convert the latest .webm to GIF"
 	@echo "  make demo     Run record + gif"
+	@echo "  make deploy   Deploy to Vercel production"
 	@echo "  make clean    Remove build output and temporary recordings"
 
 install:
@@ -38,6 +39,11 @@ gif: ensure-deps
 
 demo: ensure-deps
 	PATH=/opt/homebrew/bin:$$PATH $(NPM) run demo:record
+
+vercel-deploy: ensure-deps
+	PATH=/opt/homebrew/bin:$$PATH npx vercel --prod
+
+deploy: vercel-deploy
 
 clean:
 	rm -rf node_modules .next images/*.webm
