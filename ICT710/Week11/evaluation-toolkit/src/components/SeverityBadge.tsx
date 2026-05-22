@@ -2,13 +2,10 @@ type SeverityBadgeProps = {
   severity: string;
 };
 
-const classes: Record<string, string> = {
-  Critical: "text-bg-danger",
-  High: "text-bg-warning",
-  Medium: "text-bg-info",
-  Low: "text-bg-secondary",
-};
+function normalizeSeverity(severity: string) {
+  return severity.toLowerCase().replace(/\s+/g, "-");
+}
 
 export function SeverityBadge({ severity }: SeverityBadgeProps) {
-  return <span className={`badge ${classes[severity] ?? "text-bg-light"}`}>{severity}</span>;
+  return <span className={`badge severity-${normalizeSeverity(severity)}`}>{severity}</span>;
 }

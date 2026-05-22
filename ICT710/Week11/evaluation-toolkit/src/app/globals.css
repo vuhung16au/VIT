@@ -6,16 +6,184 @@
   --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
+:root {
+  --surface: #f7fbf8;
+  --surface-strong: #edf7f0;
+  --ink: #13231a;
+  --muted: #5f6f66;
+  --brand: #1f7a4d;
+  --brand-deep: #155b39;
+  --accent: #0d6efd;
+}
+
 body {
   min-height: 100vh;
+  color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(25, 135, 84, 0.14), transparent 35%),
+    radial-gradient(circle at top left, rgba(31, 122, 77, 0.14), transparent 35%),
+    radial-gradient(circle at right 20%, rgba(13, 110, 253, 0.12), transparent 24%),
     linear-gradient(180deg, #f8fffb 0%, #eef7f2 100%);
 }
 
 .evaluation-hero {
   background:
-    linear-gradient(135deg, rgba(25, 135, 84, 0.95), rgba(13, 110, 253, 0.92)),
+    linear-gradient(135deg, rgba(31, 122, 77, 0.96), rgba(13, 110, 253, 0.92)),
     linear-gradient(180deg, #198754, #0d6efd);
   color: white;
+}
+
+.metric-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(31, 122, 77, 0.12);
+  color: var(--brand-deep);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 0.9rem;
+}
+
+.method-card,
+.severity-summary-card,
+.walkthrough-summary-card,
+.checklist-score-card,
+.comparison-shot,
+.heat-step-card,
+.screenshot-dropzone {
+  border: 1px solid rgba(19, 35, 26, 0.08);
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 248, 244, 0.96));
+  padding: 1rem;
+}
+
+.method-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(15, 43, 28, 0.08);
+}
+
+.screenshot-dropzone {
+  min-width: 260px;
+  border-style: dashed;
+}
+
+.comparison-shot {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--brand-deep);
+  background:
+    linear-gradient(135deg, rgba(31, 122, 77, 0.12), rgba(13, 110, 253, 0.12)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7) 14px,
+      rgba(240, 246, 243, 0.9) 14px,
+      rgba(240, 246, 243, 0.9) 28px
+    );
+}
+
+.walkthrough-answer {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.7rem;
+}
+
+.answer-yes {
+  background: rgba(31, 122, 77, 0.14);
+  color: #135d39;
+}
+
+.answer-maybe {
+  background: rgba(255, 193, 7, 0.22);
+  color: #7a5b00;
+}
+
+.answer-no {
+  background: rgba(220, 53, 69, 0.16);
+  color: #8f2430;
+}
+
+.heat-step-card {
+  min-height: 110px;
+}
+
+.heatmap-canvas {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(231, 243, 235, 0.96)),
+    linear-gradient(90deg, rgba(31, 122, 77, 0.08), rgba(13, 110, 253, 0.08));
+  border: 1px solid rgba(19, 35, 26, 0.08);
+}
+
+.heatmap-point {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(220, 53, 69, 0.8) 0%, rgba(255, 193, 7, 0.38) 55%, rgba(255, 255, 255, 0) 100%);
+}
+
+.heatmap-label {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  border-radius: 999px;
+  background: rgba(19, 35, 26, 0.72);
+  color: white;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+}
+
+.severity-critical {
+  background: #dc3545;
+  color: white;
+}
+
+.severity-high {
+  background: #fd7e14;
+  color: white;
+}
+
+.severity-medium {
+  background: #ffc107;
+  color: #261d00;
+}
+
+.severity-low {
+  background: #0dcaf0;
+  color: #052533;
+}
+
+@media print {
+  nav,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card,
+  .method-card,
+  .severity-summary-card,
+  .walkthrough-summary-card,
+  .checklist-score-card,
+  .comparison-shot,
+  .heat-step-card,
+  .screenshot-dropzone {
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
 }

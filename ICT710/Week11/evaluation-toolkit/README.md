@@ -31,6 +31,16 @@ comparative evaluation across earlier projects.
 - `docs/Key-Takeaways.md` - brief IxD, UI, and UX lessons learned
 - `docs/Nielsens-Heuristics.md` - heuristic reference
 - `docs/Report-Template.md` - evaluation reporting template
+- `docs/Evaluation-Methods-Comparison.md` - when to use heuristics, walkthroughs, analytics, checklists, and A/B tests
+
+## Highlights
+
+- Evaluation hub summarising issues, severity, compliance, and most-violated heuristics
+- Heuristic workspace with issue logging, pre-loaded findings, sortable findings table, and print-to-PDF export
+- Cognitive walkthrough with step-level friction mapping and prioritized recommendations
+- Analytics dashboard with funnel, heatmap simulation, performance metrics, and insight cards
+- Interactive checklist with auto-calculated compliance scoring
+- Comparison and A/B testing pages for evidence-based design decisions
 
 ## 🚀 Deploy to Vercel
 
