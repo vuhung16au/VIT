@@ -1,6 +1,13 @@
+import { AnalyticsChart } from "@/components/AnalyticsChart";
 import { LabNav } from "@/components/LabNav";
 import { ResultsChart } from "@/components/ResultsChart";
-import { analysisSummary, errorTable, qualitativeThemes, satisfactionScores } from "@/data/testingData";
+import {
+  analysisSummary,
+  errorTable,
+  qualitativeThemes,
+  quoteCloud,
+  satisfactionScores,
+} from "@/data/testingData";
 
 export default function AnalyzePage() {
   return (
@@ -19,43 +26,31 @@ export default function AnalyzePage() {
             </div>
           </div>
         ))}
-        <div className="col-lg-7">
+        <div className="col-lg-5">
           <ResultsChart items={analysisSummary} />
         </div>
-        <div className="col-lg-5">
+        <div className="col-lg-7">
           <div className="card border-0 shadow-sm h-100">
             <div className="card-body p-4">
-              <h2 className="h5 fw-bold mb-3">Error analysis</h2>
-              <div className="table-responsive">
-                <table className="table align-middle mb-0">
-                  <thead>
-                    <tr><th>Error</th><th>Frequency</th><th>Severity</th></tr>
-                  </thead>
-                  <tbody>
-                    {errorTable.map((row) => (
-                      <tr key={row.error}>
-                        <td>{row.error}</td>
-                        <td>{row.frequency}</td>
-                        <td>{row.severity}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <h2 className="h5 fw-bold mb-3">Qualitative themes</h2>
+              <div className="d-grid gap-3">
+                {qualitativeThemes.map((theme) => (
+                  <div key={theme.label} className="border rounded-4 p-3 bg-light">
+                    <div className="fw-semibold">{theme.label}</div>
+                    <div className="small text-muted">{theme.count}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
         <div className="col-12">
-          <div className="card border-0 shadow-sm">
-            <div className="card-body p-4">
-              <h2 className="h5 fw-bold mb-3">Qualitative themes</h2>
-              <div className="d-flex flex-wrap gap-2">
-                {qualitativeThemes.map((theme) => (
-                  <span key={theme} className="badge text-bg-light border">{theme}</span>
-                ))}
-              </div>
-            </div>
-          </div>
+          <AnalyticsChart
+            successRates={analysisSummary}
+            errorHeatmap={errorTable}
+            satisfactionScores={satisfactionScores}
+            quoteCloud={quoteCloud}
+          />
         </div>
       </div>
     </main>

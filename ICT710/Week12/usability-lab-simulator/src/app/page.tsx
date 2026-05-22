@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { LabNav } from "@/components/LabNav";
 import { activeTests, workflowStages } from "@/data/testingData";
 
@@ -61,8 +63,27 @@ export default function HomePage() {
                   <div key={test.name} className="border rounded-4 p-3 bg-light">
                     <div className="fw-semibold">{test.name}</div>
                     <div className="small text-muted">{test.status} • {test.sessions} sessions</div>
+                    <div className="small mt-2">{test.objective}</div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-12">
+          <div className="card border-0 shadow-sm">
+            <div className="card-body p-4 p-md-5">
+              <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
+                <div>
+                  <h2 className="h4 fw-bold mb-1">Demo 2 extensions</h2>
+                  <p className="text-muted mb-0">
+                    Continue the week with remote moderated and unmoderated testing comparisons.
+                  </p>
+                </div>
+                <div className="d-flex flex-wrap gap-2">
+                  <Link href="/remote" className="btn btn-outline-danger">Open Remote Setup</Link>
+                  <Link href="/unmoderated" className="btn btn-danger">Open Unmoderated Demo</Link>
+                </div>
               </div>
             </div>
           </div>

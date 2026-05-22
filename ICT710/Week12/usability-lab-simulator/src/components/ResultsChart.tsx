@@ -1,5 +1,5 @@
 type ResultsChartProps = {
-  items: Array<{ task: string; success: string; time: string }>;
+  items: Array<{ task: string; success: string; time: string; target?: string }>;
 };
 
 export function ResultsChart({ items }: ResultsChartProps) {
@@ -13,6 +13,7 @@ export function ResultsChart({ items }: ResultsChartProps) {
               <div className="fw-semibold">{item.task}</div>
               <div className="small text-muted">Success: {item.success}</div>
               <div className="small text-muted">Average time: {item.time}</div>
+              {item.target ? <div className="small text-muted">{item.target}</div> : null}
             </div>
           ))}
         </div>

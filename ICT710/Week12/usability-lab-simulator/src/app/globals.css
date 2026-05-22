@@ -19,3 +19,115 @@ body {
     linear-gradient(180deg, #dc3545, #fd7e14);
   color: white;
 }
+
+.chart-track {
+  height: 0.9rem;
+  border-radius: 999px;
+  background: rgba(180, 188, 201, 0.35);
+  overflow: hidden;
+}
+
+.chart-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b42318, #f97316);
+}
+
+.chart-bar-alt {
+  background: linear-gradient(90deg, #0f766e, #14b8a6);
+}
+
+.time-plot {
+  position: relative;
+  height: 3rem;
+}
+
+.time-plot-whisker {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 50%;
+  height: 2px;
+  background: rgba(148, 163, 184, 0.9);
+  transform: translateY(-50%);
+}
+
+.time-plot-box {
+  position: absolute;
+  top: 0.8rem;
+  height: 1.4rem;
+  border-radius: 0.8rem;
+  background: rgba(180, 35, 24, 0.2);
+  border: 1px solid rgba(180, 35, 24, 0.5);
+}
+
+.time-plot-median {
+  position: absolute;
+  top: 0.55rem;
+  height: 1.9rem;
+  width: 3px;
+  border-radius: 999px;
+  background: #b42318;
+}
+
+.heat-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) 90px 110px;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.heat-cell {
+  display: grid;
+  place-items: center;
+  min-height: 3rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #b42318, #f97316);
+  color: white;
+  font-weight: 700;
+}
+
+.radar-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.radar-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.word-cloud-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(180, 35, 24, 0.2);
+  color: #7f1d1d;
+}
+
+.recording-placeholder {
+  min-height: 7rem;
+  border-radius: 1.25rem;
+  border: 1px dashed rgba(180, 35, 24, 0.35);
+  background: linear-gradient(135deg, rgba(180, 35, 24, 0.08), rgba(249, 115, 22, 0.1));
+  padding: 1rem;
+}
+
+.report-finding-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(254, 242, 242, 0.95));
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  nav,
+  button {
+    display: none !important;
+  }
+}

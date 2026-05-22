@@ -8,6 +8,8 @@ const links = [
   { href: "/think-aloud", label: "Think-Aloud" },
   { href: "/analyze", label: "Analyze" },
   { href: "/report", label: "Report" },
+  { href: "/remote", label: "Remote" },
+  { href: "/unmoderated", label: "Unmoderated" },
 ];
 
 type LabNavProps = {

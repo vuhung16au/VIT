@@ -25,6 +25,8 @@ through planning, recruiting, moderating, analyzing, and reporting moderated usa
 - `/think-aloud` - Think-aloud guide
 - `/analyze` - Analysis dashboard
 - `/report` - Findings report
+- `/remote` - Remote moderated testing setup
+- `/unmoderated` - Unmoderated testing comparison
 
 ## Docs
 
