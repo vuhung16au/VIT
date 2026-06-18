@@ -69,6 +69,7 @@ The repo also includes an automated demo-recording workflow for the key week pro
 
 ### Week05
 - **Feedback Forge**: https://feedback-forge-rho.vercel.app
+- **Ratings**: https://ui-ux-ratings.vercel.app
 
 ### Week06
 - **Interface Playground**: https://interface-playground.vercel.app

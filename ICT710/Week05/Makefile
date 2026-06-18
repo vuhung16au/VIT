@@ -31,7 +31,8 @@ help:
 	@echo "  make demo   Run the full feedback-forge recording workflow"
 	@echo "  make audit         Run security audit for all projects (uses npm audit)"
 	@echo "  make vercel-deploy Deploy all projects to Vercel"
-	@echo "  make deploy   Alias for make vercel-deploy"
+	@echo "  make deploy        Alias for make vercel-deploy"
+	@echo "  make deploy-ratings Deploy the Ratings project to Vercel"
 
 list:
 	@if [ -z "$(strip $(PACKAGE_DIRS))" ]; then \
@@ -129,3 +130,7 @@ vercel-deploy:
 	done
 
 deploy: vercel-deploy
+
+deploy-ratings:
+	@echo "==> Deploying Ratings to Vercel"
+	cd Ratings && npx vercel --prod
